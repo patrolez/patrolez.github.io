@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"Gst.prototype.value_deserialize_with_pspec","urls":[{"url":"gstreamer/gstvalue.html#GstValueDeserializeWithPSpecFunc","node_type":"p","context":{"gi-language":["javascript"]}},{"url":"gstreamer/gstvalue.html#gst_value_deserialize_with_pspec","node_type":"symbol","context":{"gi-language":["javascript"]}}]});

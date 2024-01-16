@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"theora/theoradec.html#example-pipeline","fragment":"Example pipeline\nThis example pipeline will decode an ogg stream and decodes the theora video in it.\nRefer to the theoraenc example to create the ogg file.\n"});

@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"playback-tutorial-3.c","urls":[{"url":"tutorials/playback/short-cutting-the-pipeline.html#a-playbin-waveform-generator","node_type":"p","context":{"gi-language":["default"]}}]});

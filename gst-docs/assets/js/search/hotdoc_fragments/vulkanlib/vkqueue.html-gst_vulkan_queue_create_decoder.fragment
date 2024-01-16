@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vulkanlib/vkqueue.html#gst_vulkan_queue_create_decoder","fragment":"\n\tgst_vulkan_queue_create_decoder\n\nCreates a GstVulkanDecoder object if codec decoding is supported by queue\nParameters:\na GstVulkanQueue\nthe VkVideoCodecOperationFlagBitsKHR to decode\nthe GstVulkanDecoder object\n\n\tSince\t\t\t: 1.24\n\t\t\n"});

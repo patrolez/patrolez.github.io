@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstav1parser.html#gst_av1_parser_reset","fragment":"\n\tgst_av1_parser_reset\n\nReset the current GstAV1Parser's state totally.\nParameters:\nthe GstAV1Parser\nindicate whether conforms to annex b\n\n\tSince\t\t\t: 1.18\n\t\t\n"});

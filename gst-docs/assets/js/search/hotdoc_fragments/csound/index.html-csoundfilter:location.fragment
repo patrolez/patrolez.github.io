@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"csound/index.html#csoundfilter:location","fragment":"\n\tlocation\n\nLocation of the csd file to be used by csound.\nUse either location or CSD-text but not both at the same time, if so and error would be triggered\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tNULL\n\n"});

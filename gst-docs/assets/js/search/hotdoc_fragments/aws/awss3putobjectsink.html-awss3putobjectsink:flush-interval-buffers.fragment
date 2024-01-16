@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awss3putobjectsink.html#awss3putobjectsink:flush-interval-buffers","fragment":"\n\tflush-interval-buffers\n\nNumber of buffers to accumulate before doing a write (0 => disable)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t1\n\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstcontext.html#gst_context_is_writable","fragment":"\n\tgst_context_is_writable\n\nTests if you can safely write into a context's structure or validly\nmodify the seqnum and timestamp fields.\nParameters:\na GstContext\n"});

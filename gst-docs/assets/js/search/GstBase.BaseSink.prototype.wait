@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"GstBase.BaseSink.prototype.wait","urls":[{"url":"base/gstbasesink.html#GstBaseSinkClass::unlock_stop","node_type":"p","context":{"gi-language":["javascript"]}},{"url":"base/gstbasesink.html#gst_base_sink_wait","node_type":"symbol","context":{"gi-language":["javascript"]}}]});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gsth264parser.html#GstH264ContentLightLevel","fragment":"\n\tGstH264ContentLightLevel\n\nFields\nThe upper bounds for the nominal target brightness light level\nas specified in CEA-861.3\n"});

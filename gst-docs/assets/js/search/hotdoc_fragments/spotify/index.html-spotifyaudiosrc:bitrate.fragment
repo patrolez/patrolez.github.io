@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"spotify/index.html#spotifyaudiosrc:bitrate","fragment":"\n\tbitrate\n\nSpotify audio bitrate in kbit/s\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t160 (1)\n\n"});

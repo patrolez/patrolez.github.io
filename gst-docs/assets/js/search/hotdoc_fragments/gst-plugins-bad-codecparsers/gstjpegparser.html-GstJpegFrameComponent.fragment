@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstjpegparser.html#GstJpegFrameComponent","fragment":"\n\tGstJpegFrameComponent\n\nFields\nComponent-specification parameters.\nComponent identifier (Ci)\nHorizontal sampling factor (Hi)\nVertical sampling factor (Vi)\nQuantization table destination selector (Tqi)\n\n\tSince\t\t\t: 1.6\n\t\t\n"});

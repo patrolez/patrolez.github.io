@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstmessage.html#gst_message_make_writable","fragment":"\n\tgst_message_make_writable\n\nChecks if a message is writable. If not, a writable copy is made and\nreturned.\nParameters:\nthe message to make writable\na message (possibly a duplicate) that is writable.\nMT safe\n"});

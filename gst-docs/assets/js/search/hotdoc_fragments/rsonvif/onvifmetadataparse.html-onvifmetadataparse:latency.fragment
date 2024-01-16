@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rsonvif/onvifmetadataparse.html#onvifmetadataparse:latency","fragment":"\n\tlatency\n\nMaximum latency to introduce for reordering metadata (max=auto: 6s if unparsed input, 0s if parsed input)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t18446744073709551615\n\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"installing/building-from-source-using-cerbero.html#macos-setup","fragment":"macOS Setup\nOn macOS you will need to have install the following software:\nCerbero will build all other required packages during bootstrap.\n\nXCode\nPython 3.6+ https://www.python.org/downloads/\n\n"});

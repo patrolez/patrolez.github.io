@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"fmp4/GstFMP4Mux.html#GstFMP4Mux:write-mfra","fragment":"\n\twrite-mfra\n\nWrite fragment random access box at the end of the stream\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tfalse\n\n"});

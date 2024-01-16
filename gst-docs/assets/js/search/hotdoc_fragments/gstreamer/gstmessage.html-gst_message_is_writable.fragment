@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstmessage.html#gst_message_is_writable","fragment":"\n\tgst_message_is_writable\n\nTests if you can safely write into a message's structure or validly\nmodify the seqnum and timestamp fields.\nParameters:\na GstMessage\n"});

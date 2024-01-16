@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href="..">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>gsttracerutils</title>
+
+<link rel="stylesheet" href="assets/css/dark-frontend.css" type="text/css" title="dark">
+<link rel="alternate stylesheet" href="assets/css/light-frontend.css" type="text/css" title="light">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/js/search/enable_search.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/extra_frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/devhelp.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/prism-tomorrow.css" type="text/css" title="dark">
+
+<link rel="alternate stylesheet" href="assets/css/prism.css" type="text/css" title="light">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<!-- generic -->
+<link rel="icon" type="image/png" href="assets/images/favicon-16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/images/favicon-57.png" sizes="57x57">
+<link rel="icon" type="image/png" href="assets/images/favicon-64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="assets/images/favicon-76.png" sizes="76x76">
+<link rel="icon" type="image/png" href="assets/images/favicon-96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="assets/images/favicon-128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="assets/images/favicon-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="assets/images/favicon-228.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" sizes="196x196" href="assets/images/favicon-196.png">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="assets/images/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="assets/images/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="assets/images/favicon-180.png" sizes="180x180">
+
+</head>
+
+<body class="no-script
+">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<span title="light mode switch" class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon"></span>
+			<form class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/gstreamer-logo.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+				
+<li class="dropdown">
+    <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        API References<span class="caret"></span>
+    </a>
+	<ul class="dropdown-menu" id="modules-menu">
+					<li>
+				<a href="gstreamer/gi-index.html">GStreamer core</a>
+			</li>
+					<li>
+				<a href="libs.html">GStreamer Libraries</a>
+			</li>
+					<li>
+				<a href="plugins_doc.html">GStreamer Plugins</a>
+			</li>
+		</ul>
+</li>
+
+<li>
+    <a href="application-development/index.html">Application manual</a>
+</li>
+
+
+<li>
+    <a href="tutorials/index.html">Tutorials</a>
+</li>
+
+			</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+							</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="gi-extension" data-hotdoc-in-toplevel="False" data-hotdoc-project="gstreamer" data-hotdoc-ref="gsttracerutils.html" class="page_container" id="page-wrapper" data-hotdoc-meta-gi-languages="['c', 'javascript', 'python']" data-hotdoc-meta-gi-language="c">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/full-width.js"></script>
+  <div id="sitenav-wrapper">
+    <iframe src="hotdoc-sitemap.html" id="sitenav-frame"></iframe>
+  </div>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-role="main">
+    </div>
+        
+        
+
+            <h2 class="symbol_section">Functions</h2>
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.18;" id="gst_tracing_get_active_tracers">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="gst_tracing_get_active_tracers">
+	<i>gst_tracing_get_active_tracers</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GList" href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList">GList</a> *
+gst_tracing_get_active_tracers ()</pre>
+
+<p>Get a list of all active tracer objects owned by the tracing framework for
+the entirety of the run-time of the process or till <a href="gstreamer/gst.html#gst_deinit">gst_deinit</a> is called.</p>
+
+
+
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span>
+<span class="annotation">[<abbr title="Free data after the code is done"><span class="acronym">transfer: full</span></abbr>]</span><span class="annotation">[<abbr title="Generic and defining element of containers and arrays"><span class="acronym">element-type</span></abbr>Gst.Tracer]</span><span>)</span>
+–
+			</div>
+							<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList">GList</a> of
+<a href="gstreamer/gsttracer.html#GstTracer">GstTracer</a> objects</p>
+
+					</div>
+	</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.18
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+
+
+
+
+<h3 data-hotdoc-id="gst_tracing_get_active_tracers">
+	<i>Gst.prototype.tracing_get_active_tracers</i>
+</h3>
+
+
+<pre class="javascript-prototype language-javascript">
+<code>function Gst.prototype.tracing_get_active_tracers(): {
+    // javascript wrapper for 'gst_tracing_get_active_tracers'
+}</code></pre>
+
+<p>Get a list of all active tracer objects owned by the tracing framework for
+the entirety of the run-time of the process or till <a href="gstreamer/gst.html#gst_deinit">Gst.prototype.deinit</a> is called.</p>
+
+
+
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span>[ <a title="Gst.Tracer" href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a> ]<span>)</span>
+–
+			</div>
+							<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList">GLib.List</a> of
+<a href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a> objects</p>
+
+					</div>
+	</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.18
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-python">
+
+
+
+
+<h3 data-hotdoc-id="gst_tracing_get_active_tracers">
+	<i>Gst.tracing_get_active_tracers</i>
+</h3>
+
+
+<pre class="python-prototype language-python">
+<code>def Gst.tracing_get_active_tracers ():
+    #python wrapper for 'gst_tracing_get_active_tracers'</code></pre>
+
+<p>Get a list of all active tracer objects owned by the tracing framework for
+the entirety of the run-time of the process or till <a href="gstreamer/gst.html#gst_deinit">Gst.deinit</a> is called.</p>
+
+
+
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span>[ <a title="Gst.Tracer" href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a> ]<span>)</span>
+–
+			</div>
+							<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList">GLib.List</a> of
+<a href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a> objects</p>
+
+					</div>
+	</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.18
+		</p>
+
+<hr>
+
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.8;" id="gst_tracing_register_hook">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="gst_tracing_register_hook">
+	<i>gst_tracing_register_hook</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+gst_tracing_register_hook (<a title="GstTracer" href="gstreamer/gsttracer.html#GstTracer">GstTracer</a> * tracer,
+                           const <a title="gchar" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar">gchar</a> * detail,
+                           <a title="GCallback" href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GCallback">GCallback</a> func)</pre>
+
+<p>Register <em>func</em> to be called when the trace hook <em>detail</em> is getting invoked.
+Use <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a> for <em>detail</em> to register to all hooks.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>tracer</code></em></i>
+–
+</div>
+<p>the tracer</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>detail</code></em></i>
+–
+</div>
+<p>the detailed hook</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>func</code></em></i>
+<span>(</span>
+<span class="annotation">[<abbr title="The callback is valid until first called"><span class="acronym">scope async</span></abbr>]</span><span>)</span>
+–
+</div>
+<p>the callback</p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.8
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+
+
+
+
+<h3 data-hotdoc-id="gst_tracing_register_hook">
+	<i>Gst.prototype.tracing_register_hook</i>
+</h3>
+
+
+<pre class="javascript-prototype language-javascript">
+<code>function Gst.prototype.tracing_register_hook(tracer: <a title="Gst.Tracer" href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a>, detail: <a title="String" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, func: <a title="GObject.Callback" href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GCallback">GObject.Callback</a>): {
+    // javascript wrapper for 'gst_tracing_register_hook'
+}</code></pre>
+
+<p>Register <em>func</em> to be called when the trace hook <em>detail</em> is getting invoked.
+Use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a> for <em>detail</em> to register to all hooks.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>tracer</code></em></i>
+<span>(</span><a title="Gst.Tracer" href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a><span>)</span>
+–
+</div>
+<p>the tracer</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>detail</code></em></i>
+<span>(</span><a title="String" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a><span>)</span>
+–
+</div>
+<p>the detailed hook</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>func</code></em></i>
+<span>(</span><a title="GObject.Callback" href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GCallback">GObject.Callback</a><span>)</span>
+–
+</div>
+<p>the callback</p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.8
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-python">
+
+
+
+
+<h3 data-hotdoc-id="gst_tracing_register_hook">
+	<i>Gst.tracing_register_hook</i>
+</h3>
+
+
+<pre class="python-prototype language-python">
+<code>def Gst.tracing_register_hook (tracer, detail, func):
+    #python wrapper for 'gst_tracing_register_hook'</code></pre>
+
+<p>Register <em>func</em> to be called when the trace hook <em>detail</em> is getting invoked.
+Use <a href="https://docs.python.org/3/library/constants.html#None">None</a> for <em>detail</em> to register to all hooks.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>tracer</code></em></i>
+<span>(</span><a title="Gst.Tracer" href="gstreamer/gsttracer.html#GstTracer">Gst.Tracer</a><span>)</span>
+–
+</div>
+<p>the tracer</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>detail</code></em></i>
+<span>(</span><a title="str" href="https://docs.python.org/3/library/functions.html#func-str">str</a><span>)</span>
+–
+</div>
+<p>the detailed hook</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>func</code></em></i>
+<span>(</span><a title="GObject.Callback" href="https://developer.gnome.org/gobject/unstable/gobject-Closures.html#GCallback">GObject.Callback</a><span>)</span>
+–
+</div>
+<p>the callback</p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.8
+		</p>
+
+<hr>
+
+</div>
+
+</div>
+
+
+            <h2 class="symbol_section">Function Macros</h2>
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_BIN_ADD_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_BIN_ADD_POST">
+	<i>GST_TRACER_BIN_ADD_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_BIN_ADD_POST(bin, element, result) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_BIN_ADD_POST), \
+    GstTracerHookBinAddPost, (GST_TRACER_ARGS, bin, element, result)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_BIN_ADD_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_BIN_ADD_PRE">
+	<i>GST_TRACER_BIN_ADD_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_BIN_ADD_PRE(bin, element) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_BIN_ADD_PRE), \
+    GstTracerHookBinAddPre, (GST_TRACER_ARGS, bin, element)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_BIN_REMOVE_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_BIN_REMOVE_POST">
+	<i>GST_TRACER_BIN_REMOVE_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_BIN_REMOVE_POST(bin, result) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_BIN_REMOVE_POST), \
+    GstTracerHookBinRemovePost, (GST_TRACER_ARGS, bin, result)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_BIN_REMOVE_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_BIN_REMOVE_PRE">
+	<i>GST_TRACER_BIN_REMOVE_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_BIN_REMOVE_PRE(bin, element) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_BIN_REMOVE_PRE), \
+    GstTracerHookBinRemovePre, (GST_TRACER_ARGS, bin, element)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_DISPATCH">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_DISPATCH">
+	<i>GST_TRACER_DISPATCH</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_DISPATCH(key,type,args) G_STMT_START{ \
+  if (GST_TRACER_IS_ENABLED) {                                         \
+    GstClockTime ts = GST_TRACER_TS;                                   \
+    GList *__l, *__n;                                                  \
+    GstTracerHook *h;                                                  \
+    __l = g_hash_table_lookup (_priv_tracers, GINT_TO_POINTER (key));  \
+    for (__n = __l; __n; __n = g_list_next (__n)) {                    \
+      h = (GstTracerHook *) __n-&gt;data;                                 \
+      ((type)(h-&gt;func)) args;                                          \
+    }                                                                  \
+    __l = g_hash_table_lookup (_priv_tracers, NULL);                   \
+    for (__n = __l; __n; __n = g_list_next (__n)) {                    \
+      h = (GstTracerHook *) __n-&gt;data;                                 \
+      ((type)(h-&gt;func)) args;                                          \
+    }                                                                  \
+  }                                                                    \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_ADD_PAD">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_ADD_PAD">
+	<i>GST_TRACER_ELEMENT_ADD_PAD</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_ADD_PAD(element, pad) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_ADD_PAD), \
+    GstTracerHookElementAddPad, (GST_TRACER_ARGS, element, pad)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_CHANGE_STATE_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_CHANGE_STATE_POST">
+	<i>GST_TRACER_ELEMENT_CHANGE_STATE_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_CHANGE_STATE_POST(element, transition, result) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_CHANGE_STATE_POST), \
+    GstTracerHookElementChangeStatePost, (GST_TRACER_ARGS, element, transition, result)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_CHANGE_STATE_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_CHANGE_STATE_PRE">
+	<i>GST_TRACER_ELEMENT_CHANGE_STATE_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_CHANGE_STATE_PRE(element, transition) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_CHANGE_STATE_PRE), \
+    GstTracerHookElementChangeStatePre, (GST_TRACER_ARGS, element, transition)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_NEW">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_NEW">
+	<i>GST_TRACER_ELEMENT_NEW</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_NEW(element) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_NEW), \
+    GstTracerHookElementNew, (GST_TRACER_ARGS, element)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_POST_MESSAGE_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_POST_MESSAGE_POST">
+	<i>GST_TRACER_ELEMENT_POST_MESSAGE_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_POST_MESSAGE_POST(element, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_POST_MESSAGE_POST), \
+    GstTracerHookElementPostMessagePost, (GST_TRACER_ARGS, element, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_POST_MESSAGE_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_POST_MESSAGE_PRE">
+	<i>GST_TRACER_ELEMENT_POST_MESSAGE_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_POST_MESSAGE_PRE(element, message) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_POST_MESSAGE_PRE), \
+    GstTracerHookElementPostMessagePre, (GST_TRACER_ARGS, element, message)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_QUERY_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_QUERY_POST">
+	<i>GST_TRACER_ELEMENT_QUERY_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_QUERY_POST(element, query, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_QUERY_POST), \
+    GstTracerHookElementQueryPost, (GST_TRACER_ARGS, element, query, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_QUERY_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_QUERY_PRE">
+	<i>GST_TRACER_ELEMENT_QUERY_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_QUERY_PRE(element, query) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_QUERY_PRE), \
+    GstTracerHookElementQueryPre, (GST_TRACER_ARGS, element, query)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ELEMENT_REMOVE_PAD">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ELEMENT_REMOVE_PAD">
+	<i>GST_TRACER_ELEMENT_REMOVE_PAD</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ELEMENT_REMOVE_PAD(element, pad) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_ELEMENT_REMOVE_PAD), \
+    GstTracerHookElementRemovePad, (GST_TRACER_ARGS, element, pad)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_MINI_OBJECT_CREATED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_MINI_OBJECT_CREATED">
+	<i>GST_TRACER_MINI_OBJECT_CREATED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_MINI_OBJECT_CREATED(object) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_MINI_OBJECT_CREATED), \
+    GstTracerHookMiniObjectCreated, (GST_TRACER_ARGS, object)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_MINI_OBJECT_DESTROYED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_MINI_OBJECT_DESTROYED">
+	<i>GST_TRACER_MINI_OBJECT_DESTROYED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_MINI_OBJECT_DESTROYED(object) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_MINI_OBJECT_DESTROYED), \
+    GstTracerHookMiniObjectDestroyed, (GST_TRACER_ARGS, object)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_MINI_OBJECT_REFFED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_MINI_OBJECT_REFFED">
+	<i>GST_TRACER_MINI_OBJECT_REFFED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_MINI_OBJECT_REFFED(object, new_refcount) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_MINI_OBJECT_REFFED), \
+    GstTracerHookMiniObjectReffed, (GST_TRACER_ARGS, object, new_refcount)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_MINI_OBJECT_UNREFFED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_MINI_OBJECT_UNREFFED">
+	<i>GST_TRACER_MINI_OBJECT_UNREFFED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_MINI_OBJECT_UNREFFED(object, new_refcount) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_MINI_OBJECT_UNREFFED), \
+    GstTracerHookMiniObjectUnreffed, (GST_TRACER_ARGS, object, new_refcount)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_OBJECT_CREATED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_OBJECT_CREATED">
+	<i>GST_TRACER_OBJECT_CREATED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_OBJECT_CREATED(object) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_OBJECT_CREATED), \
+    GstTracerHookObjectCreated, (GST_TRACER_ARGS, object)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_OBJECT_DESTROYED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_OBJECT_DESTROYED">
+	<i>GST_TRACER_OBJECT_DESTROYED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_OBJECT_DESTROYED(object) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_OBJECT_DESTROYED), \
+    GstTracerHookObjectDestroyed, (GST_TRACER_ARGS, object)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_OBJECT_REFFED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_OBJECT_REFFED">
+	<i>GST_TRACER_OBJECT_REFFED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_OBJECT_REFFED(object, new_refcount) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_OBJECT_REFFED), \
+    GstTracerHookObjectReffed, (GST_TRACER_ARGS, object, new_refcount)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_OBJECT_UNREFFED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_OBJECT_UNREFFED">
+	<i>GST_TRACER_OBJECT_UNREFFED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_OBJECT_UNREFFED(object, new_refcount) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_OBJECT_UNREFFED), \
+    GstTracerHookObjectUnreffed, (GST_TRACER_ARGS, object, new_refcount)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.22;" id="GST_TRACER_PAD_CHAIN_LIST_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_CHAIN_LIST_POST">
+	<i>GST_TRACER_PAD_CHAIN_LIST_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_CHAIN_LIST_POST(pad, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_CHAIN_LIST_POST), \
+    GstTracerHookPadChainListPost, (GST_TRACER_ARGS, pad, res)); \
+}G_STMT_END
+</pre>
+
+<p>Dispatches the "pad-chain-list-post" hook.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>pad</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstpad.html#GstPad">GstPad</a></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>res</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstpad.html#GstFlowReturn">GstFlowReturn</a></p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.22
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.22;" id="GST_TRACER_PAD_CHAIN_LIST_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_CHAIN_LIST_PRE">
+	<i>GST_TRACER_PAD_CHAIN_LIST_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_CHAIN_LIST_PRE(pad, list) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_CHAIN_LIST_PRE), \
+    GstTracerHookPadChainListPre, (GST_TRACER_ARGS, pad, list)); \
+}G_STMT_END
+</pre>
+
+<p>Dispatches the "pad-chain-list-pre" hook.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>pad</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstpad.html#GstPad">GstPad</a></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>list</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstbufferlist.html#GstBufferList">GstBufferList</a></p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.22
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.22;" id="GST_TRACER_PAD_CHAIN_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_CHAIN_POST">
+	<i>GST_TRACER_PAD_CHAIN_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_CHAIN_POST(pad, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_CHAIN_POST), \
+    GstTracerHookPadChainPost, (GST_TRACER_ARGS, pad, res)); \
+}G_STMT_END
+</pre>
+
+<p>Dispatches the "pad-chain-post" hook.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>pad</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstpad.html#GstPad">GstPad</a></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>res</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstpad.html#GstFlowReturn">GstFlowReturn</a></p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.22
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.22;" id="GST_TRACER_PAD_CHAIN_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_CHAIN_PRE">
+	<i>GST_TRACER_PAD_CHAIN_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_CHAIN_PRE(pad, buffer) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_CHAIN_PRE), \
+    GstTracerHookPadChainPre, (GST_TRACER_ARGS, pad, buffer)); \
+}G_STMT_END
+</pre>
+
+<p>Dispatches the "pad-chain-pre" hook.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>pad</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstpad.html#GstPad">GstPad</a></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>buffer</code></em></i>
+–
+</div>
+<p>a <a href="gstreamer/gstbuffer.html#GstBuffer">GstBuffer</a></p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.22
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_LINK_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_LINK_POST">
+	<i>GST_TRACER_PAD_LINK_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_LINK_POST(srcpad, sinkpad, result) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_LINK_POST), \
+    GstTracerHookPadLinkPost, (GST_TRACER_ARGS, srcpad, sinkpad, result)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_LINK_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_LINK_PRE">
+	<i>GST_TRACER_PAD_LINK_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_LINK_PRE(srcpad, sinkpad) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_LINK_PRE), \
+    GstTracerHookPadLinkPre, (GST_TRACER_ARGS, srcpad, sinkpad)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PULL_RANGE_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PULL_RANGE_POST">
+	<i>GST_TRACER_PAD_PULL_RANGE_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PULL_RANGE_POST(pad, buffer, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PULL_RANGE_POST), \
+    GstTracerHookPadPullRangePost, (GST_TRACER_ARGS, pad, buffer, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PULL_RANGE_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PULL_RANGE_PRE">
+	<i>GST_TRACER_PAD_PULL_RANGE_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PULL_RANGE_PRE(pad, offset, size) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PULL_RANGE_PRE), \
+    GstTracerHookPadPullRangePre, (GST_TRACER_ARGS, pad, offset, size)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PUSH_EVENT_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PUSH_EVENT_POST">
+	<i>GST_TRACER_PAD_PUSH_EVENT_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PUSH_EVENT_POST(pad, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PUSH_EVENT_POST), \
+    GstTracerHookPadPushEventPost, (GST_TRACER_ARGS, pad, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PUSH_EVENT_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PUSH_EVENT_PRE">
+	<i>GST_TRACER_PAD_PUSH_EVENT_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PUSH_EVENT_PRE(pad, event) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PUSH_EVENT_PRE), \
+    GstTracerHookPadPushEventPre, (GST_TRACER_ARGS, pad, event)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PUSH_LIST_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PUSH_LIST_POST">
+	<i>GST_TRACER_PAD_PUSH_LIST_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PUSH_LIST_POST(pad, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PUSH_LIST_POST), \
+    GstTracerHookPadPushListPost, (GST_TRACER_ARGS, pad, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PUSH_LIST_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PUSH_LIST_PRE">
+	<i>GST_TRACER_PAD_PUSH_LIST_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PUSH_LIST_PRE(pad, list) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PUSH_LIST_PRE), \
+    GstTracerHookPadPushListPre, (GST_TRACER_ARGS, pad, list)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PUSH_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PUSH_POST">
+	<i>GST_TRACER_PAD_PUSH_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PUSH_POST(pad, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PUSH_POST), \
+    GstTracerHookPadPushPost, (GST_TRACER_ARGS, pad, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_PUSH_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_PUSH_PRE">
+	<i>GST_TRACER_PAD_PUSH_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_PUSH_PRE(pad, buffer) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_PUSH_PRE), \
+    GstTracerHookPadPushPre, (GST_TRACER_ARGS, pad, buffer)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_QUERY_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_QUERY_POST">
+	<i>GST_TRACER_PAD_QUERY_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_QUERY_POST(pad, query, res) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_QUERY_POST), \
+    GstTracerHookPadQueryPost, (GST_TRACER_ARGS, pad, query, res)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_QUERY_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_QUERY_PRE">
+	<i>GST_TRACER_PAD_QUERY_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_QUERY_PRE(pad, query) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_QUERY_PRE), \
+    GstTracerHookPadQueryPre, (GST_TRACER_ARGS, pad, query)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_UNLINK_POST">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_UNLINK_POST">
+	<i>GST_TRACER_PAD_UNLINK_POST</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_UNLINK_POST(srcpad, sinkpad, result) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_UNLINK_POST), \
+    GstTracerHookPadUnlinkPost, (GST_TRACER_ARGS, srcpad, sinkpad, result)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_PAD_UNLINK_PRE">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PAD_UNLINK_PRE">
+	<i>GST_TRACER_PAD_UNLINK_PRE</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PAD_UNLINK_PRE(srcpad, sinkpad) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PAD_UNLINK_PRE), \
+    GstTracerHookPadUnlinkPre, (GST_TRACER_ARGS, srcpad, sinkpad)); \
+}G_STMT_END
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.20;" id="GST_TRACER_PLUGIN_FEATURE_LOADED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_PLUGIN_FEATURE_LOADED">
+	<i>GST_TRACER_PLUGIN_FEATURE_LOADED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_PLUGIN_FEATURE_LOADED(feature) G_STMT_START{ \
+  GST_TRACER_DISPATCH(GST_TRACER_QUARK(HOOK_PLUGIN_FEATURE_LOADED), \
+    GstTracerHookPluginFeatureLoaded, (GST_TRACER_ARGS, feature)); \
+}G_STMT_END
+</pre>
+
+<p>Add a tracepoint when a plugin feature is loaded.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>feature</code></em></i>
+–
+</div>
+<p>The feature that this tracer is called for</p>
+
+</div>
+
+			</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.20
+		</p>
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_QUARK">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_QUARK">
+	<i>GST_TRACER_QUARK</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_QUARK(q) _priv_gst_tracer_quark_table[GST_TRACER_QUARK_##q]
+</pre>
+
+
+
+
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+
+            <h2 class="symbol_section">Constants</h2>
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_ARGS">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_ARGS">
+	<i>GST_TRACER_ARGS</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_ARGS h-&gt;tracer, ts
+</pre>
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_IS_ENABLED">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_IS_ENABLED">
+	<i>GST_TRACER_IS_ENABLED</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_IS_ENABLED (_priv_tracer_enabled)
+</pre>
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GST_TRACER_TS">
+	
+<div class="gi-symbol gi-symbol-c">
+
+
+
+
+<h3 data-hotdoc-id="GST_TRACER_TS">
+	<i>GST_TRACER_TS</i>
+</h3>
+
+
+<pre class="raw_code">
+#define GST_TRACER_TS \
+  GST_CLOCK_DIFF (_priv_gst_start_time, gst_util_get_timestamp ())
+</pre>
+
+
+
+
+
+<hr>
+
+</div>
+<div class="gi-symbol gi-symbol-javascript">
+</div>
+<div class="gi-symbol gi-symbol-python">
+</div>
+
+</div>
+
+
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
+</html>

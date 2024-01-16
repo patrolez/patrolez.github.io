@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst_bin_add_many","urls":[{"url":"gstreamer/gstbin.html#gst_bin_add_many","node_type":"symbol","context":{"gi-language":["c"]}},{"url":"tutorials/basic/concepts.html#conclusion","node_type":"ul","context":{"gi-language":["default"]}},{"url":"tutorials/basic/concepts.html#pipeline-creation","node_type":"p","context":{"gi-language":["default"]}}]});

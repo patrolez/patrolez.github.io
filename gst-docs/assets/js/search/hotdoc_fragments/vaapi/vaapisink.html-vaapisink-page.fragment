@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapisink.html#vaapisink-page","fragment":"vaapisink\nvaapisink renders video frames to a drawable (X Window) on a local\ndisplay using the Video Acceleration (VA) API. The element will\ncreate its own internal window and render into it.\n"});

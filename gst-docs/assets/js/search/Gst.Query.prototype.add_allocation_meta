@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"Gst.Query.prototype.add_allocation_meta","urls":[{"url":"gstreamer/gstquery.html#gst_query_add_allocation_meta","node_type":"symbol","context":{"gi-language":["javascript"]}},{"url":"video/gstvideometa.html#GstVideoMeta","node_type":"p","context":{"gi-language":["javascript"]}}]});

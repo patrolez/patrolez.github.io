@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"transcribe-latency","urls":[{"url":"aws/awstranscriber.html#awstranscriber:latency","node_type":"p","context":{"gi-language":["default"]}},{"url":"aws/awstranscriber.html#awstranscriber:transcribe-latency","node_type":"symbol","context":{"gi-language":["default"]}}]});

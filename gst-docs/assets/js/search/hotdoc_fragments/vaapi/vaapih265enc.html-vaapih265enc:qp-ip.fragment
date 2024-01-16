@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapih265enc.html#vaapih265enc:qp-ip","fragment":"\n\tqp-ip\n\nDifference of QP between I and P frame (available only on CQP)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t0\n\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstmemory.html#gst_memory_make_writable","fragment":"\n\tgst_memory_make_writable\n\nReturns a writable copy of m. If the source memory is\nalready writable, this will simply return the same memory.\nParameters:\na GstMemory\na writable memory (which may or may not be the\nsame as m) or NULL if copying is required but not possible.\n"});

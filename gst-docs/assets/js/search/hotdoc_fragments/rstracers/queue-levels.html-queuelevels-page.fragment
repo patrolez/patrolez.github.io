@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rstracers/queue-levels.html#queuelevels-page","fragment":"queue-levels\nThis tracer provides an easy way to collect queue levels over time of all queues inside a\npipeline.\nExample:\nThe generated file is a CSV file of the format\n"});

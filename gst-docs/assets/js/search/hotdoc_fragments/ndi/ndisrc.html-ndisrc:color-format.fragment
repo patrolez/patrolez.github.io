@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"ndi/ndisrc.html#ndisrc:color-format","fragment":"\n\tcolor-format\n\nReceive color format\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tuyvy-bgra (1)\n\n"});

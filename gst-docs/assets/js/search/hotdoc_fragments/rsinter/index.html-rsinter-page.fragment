@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rsinter/index.html#rsinter-page","fragment":"rsinter\nThis plugin exposes two elements, intersink and intersrc, that can be\nused to transfer data from one pipeline to multiple others in the same\nprocess.\nThe elements are implemented using the StreamProducer API from\ngstreamer-utils.\n"});

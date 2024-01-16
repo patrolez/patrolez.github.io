@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameHdr","fragment":"\n\tGstVC1FrameHdr\n\nFields\nStructure that represent picture in any profile or mode.\nYou should look at ptype and profile to know what is currently\nin use.\n"});

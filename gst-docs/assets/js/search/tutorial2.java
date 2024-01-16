@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"tutorial2.java","urls":[{"url":"tutorials/android/a-running-pipeline.html#a-pipeline-on-android-java-code","node_type":"p","context":{"gi-language":["default"]}}]});

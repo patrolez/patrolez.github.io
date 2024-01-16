@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/webrtcsink.html#GstBaseWebRTCSink:signaller","fragment":"\n\tsignaller\n\nThe Signallable object to use to handle WebRTC Signalling\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\n"});

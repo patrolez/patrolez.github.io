@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"hlssink3/GstHlsBaseSink.html#GstHlsBaseSink:enable-endlist","fragment":"\n\tenable-endlist\n\nWrite \"EXT-X-ENDLIST\" tag to manifest at the end of stream\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\ttrue\n\n"});

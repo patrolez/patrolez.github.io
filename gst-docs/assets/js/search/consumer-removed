@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"consumer-removed","urls":[{"url":"rswebrtc/webrtcsink.html#GstBaseWebRTCSink::consumer-removed","node_type":"symbol","context":{"gi-language":["default"]}},{"url":"rswebrtc/webrtcsink.html#GstRSWebRTCSignallableIface::consumer-removed","node_type":"symbol","context":{"gi-language":["default"]}}]});

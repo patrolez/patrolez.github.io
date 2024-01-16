@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"GstCudaQuarkId","urls":[{"url":"cuda/gst-libs/gst/cuda/gstcudautils.html#GstCudaQuarkId","node_type":"symbol","context":{"gi-language":["c"]}},{"url":"cuda/gst-libs/gst/cuda/gstcudautils.html#gst_cuda_quark_from_id","node_type":"p","context":{"gi-language":["c"]}}]});

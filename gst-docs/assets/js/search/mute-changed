@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"mute-changed","urls":[{"url":"play/gst-libs/gst/play/gstplay-types.html#GstPlaySignalAdapter::mute-changed","node_type":"symbol","context":{"gi-language":["c","javascript","python"]}},{"url":"player/gstplayer.html#GstPlayer::mute-changed","node_type":"symbol","context":{"gi-language":["c","javascript","python"]}}]});

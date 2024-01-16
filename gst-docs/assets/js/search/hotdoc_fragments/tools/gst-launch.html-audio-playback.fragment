@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"tools/gst-launch.html#audio-playback","fragment":"Audio playback\nPlay the mp3 music file \"music.mp3\" using a libmad-based plugin and output to\nan OSS device:\nPlay an Ogg Vorbis format file:\nPlay an mp3 file using GNOME-VFS:\nPlay an HTTP stream using GNOME-VFS:\nUse GNOME-VFS to play an mp3 file located on an SMB server:\n"});

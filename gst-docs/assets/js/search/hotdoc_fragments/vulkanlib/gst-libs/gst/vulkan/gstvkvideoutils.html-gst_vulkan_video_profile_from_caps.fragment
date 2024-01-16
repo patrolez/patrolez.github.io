@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vulkanlib/gst-libs/gst/vulkan/gstvkvideoutils.html#gst_vulkan_video_profile_from_caps","fragment":"\n\tgst_vulkan_video_profile_from_caps\n\nParameters:\nthe output profile\na GstCaps to parse\na supported video operation\nTRUE if caps was parsed correctly, otherwise FALSE\n\n\tSince\t\t\t: 1.24\n\t\t\n"});

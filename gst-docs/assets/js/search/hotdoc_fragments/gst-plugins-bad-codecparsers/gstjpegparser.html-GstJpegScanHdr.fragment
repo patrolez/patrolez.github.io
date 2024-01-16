@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstjpegparser.html#GstJpegScanHdr","fragment":"\n\tGstJpegScanHdr\n\nFields\nScan header.\nNumber of image components in scan (Ns)\nImage components\n\n\tSince\t\t\t: 1.6\n\t\t\n"});

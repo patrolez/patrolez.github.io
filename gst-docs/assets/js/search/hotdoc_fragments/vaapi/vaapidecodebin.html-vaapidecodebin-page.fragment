@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapidecodebin.html#vaapidecodebin-page","fragment":"vaapidecodebin\nvaapidecodebin is similar vaapi{CODEC}dec, but it is composed by\nthe unregistered vaapidecode, a queue, and the\nvaapipostproc, if it is available and functional in the setup.\nIt offers the functionality of GstVaapiDecoder and the many options\nof vaapipostproc.\n"});

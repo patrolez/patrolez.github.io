@@ -1,0 +1,5171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href="..">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>GstVc1Parser</title>
+
+<link rel="stylesheet" href="assets/css/dark-frontend.css" type="text/css" title="dark">
+<link rel="alternate stylesheet" href="assets/css/light-frontend.css" type="text/css" title="light">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/js/search/enable_search.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/extra_frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/devhelp.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/prism-tomorrow.css" type="text/css" title="dark">
+
+<link rel="alternate stylesheet" href="assets/css/prism.css" type="text/css" title="light">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<!-- generic -->
+<link rel="icon" type="image/png" href="assets/images/favicon-16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/images/favicon-57.png" sizes="57x57">
+<link rel="icon" type="image/png" href="assets/images/favicon-64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="assets/images/favicon-76.png" sizes="76x76">
+<link rel="icon" type="image/png" href="assets/images/favicon-96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="assets/images/favicon-128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="assets/images/favicon-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="assets/images/favicon-228.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" sizes="196x196" href="assets/images/favicon-196.png">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="assets/images/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="assets/images/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="assets/images/favicon-180.png" sizes="180x180">
+
+</head>
+
+<body class="no-script
+">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<span title="light mode switch" class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon"></span>
+			<form class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/gstreamer-logo.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+				
+<li class="dropdown">
+    <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        API References<span class="caret"></span>
+    </a>
+	<ul class="dropdown-menu" id="modules-menu">
+					<li>
+				<a href="gstreamer/gi-index.html">GStreamer core</a>
+			</li>
+					<li>
+				<a href="libs.html">GStreamer Libraries</a>
+			</li>
+					<li>
+				<a href="plugins_doc.html">GStreamer Plugins</a>
+			</li>
+		</ul>
+</li>
+
+<li>
+    <a href="application-development/index.html">Application manual</a>
+</li>
+
+
+<li>
+    <a href="tutorials/index.html">Tutorials</a>
+</li>
+
+			</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+							</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="c-extension" data-hotdoc-in-toplevel="False" data-hotdoc-project="gst-plugins-bad-codecparsers" data-hotdoc-ref="gstvc1parser.html" class="page_container" id="page-wrapper" data-hotdoc-meta-gi-languages="['c', 'javascript', 'python']">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/full-width.js"></script>
+  <div id="sitenav-wrapper">
+    <iframe src="hotdoc-sitemap.html" id="sitenav-frame"></iframe>
+  </div>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-role="main">
+        <h1 id="gstvc1parser-page">GstVc1Parser</h1>
+<p>For more details about the structures, look at the
+smpte specifications (S421m-2006.pdf).</p>
+
+    </div>
+        
+
+            <h2 class="symbol_section">Functions</h2>
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_bitplanes_ensure_size">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_bitplanes_ensure_size">
+	<i>gst_vc1_bitplanes_ensure_size</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="gboolean" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#bool" data-gi-title-python="bool">gboolean</a>
+gst_vc1_bitplanes_ensure_size (<a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> * bitplanes,
+                               <a title="GstVC1SeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> * seqhdr)</pre>
+
+<p>Fills the <em>bitplanes</em> structure from <em>seqhdr</em>, this function
+should be called after <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#gst_vc1_parse_sequence_header">gst_vc1_parse_sequence_header</a> if
+in simple or main mode, or after <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#gst_vc1_parse_entry_point_header">gst_vc1_parse_entry_point_header</a>
+if in advanced mode.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>bitplanes</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> to reset</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> from which to set <em>bitplanes</em></p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="gboolean" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#bool" data-gi-title-python="bool">gboolean</a><span>)</span>
+–
+			</div>
+							<p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" data-gi-title-javascript="true" data-gi-href-python="https://docs.python.org/3/library/constants.html#True" data-gi-title-python="True">TRUE</a> if everything went fine, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" data-gi-title-javascript="false" data-gi-href-python="https://docs.python.org/3/library/constants.html#False" data-gi-title-python="False">FALSE</a> otherwise</p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_bitplanes_free">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_bitplanes_free">
+	<i>gst_vc1_bitplanes_free</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+void 
+gst_vc1_bitplanes_free (<a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> * bitplanes)</pre>
+
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>bitplanes</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span>void <span>)</span>
+–
+			</div>
+							<i>No description available</i>
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_bitplanes_free_1">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_bitplanes_free_1">
+	<i>gst_vc1_bitplanes_free_1</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+void 
+gst_vc1_bitplanes_free_1 (<a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> * bitplanes)</pre>
+
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>bitplanes</code></em></i>
+–
+</div>
+<i>No description available</i>
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span>void <span>)</span>
+–
+			</div>
+							<i>No description available</i>
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_bitplanes_new">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_bitplanes_new">
+	<i>gst_vc1_bitplanes_new</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> *
+gst_vc1_bitplanes_new ()</pre>
+
+<p>Creates a new <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a>. It should be freed with
+<a href="gst-plugins-bad-codecparsers/gstvc1parser.html#gst_vc1_bitplanes_free">gst_vc1_bitplanes_free</a> after use.</p>
+
+
+
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> *<span>)</span>
+–
+			</div>
+							<p>a new <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_identify_next_bdu">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_identify_next_bdu">
+	<i>gst_vc1_identify_next_bdu</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_identify_next_bdu (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                           <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                           <a title="GstVC1BDU" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BDU">GstVC1BDU</a> * bdu)</pre>
+
+<p>Parses <em>data</em> and fills <em>bdu</em> fields</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>bdu</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BDU">GstVC1BDU</a> where to store parsed bdu headers</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_entry_point_header">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_entry_point_header">
+	<i>gst_vc1_parse_entry_point_header</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_entry_point_header (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                                  <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                                  <a title="GstVC1EntryPointHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1EntryPointHdr">GstVC1EntryPointHdr</a> * entrypoint,
+                                  <a title="GstVC1SeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> * seqhdr)</pre>
+
+<p>Parses <em>data</em>, and sets <em>entrypoint</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>entrypoint</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1EntryPointHdr">GstVC1EntryPointHdr</a> to set.</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> currently being parsed</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1EntryPointHdr">GstVC1EntryPointHdr</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_field_header">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_field_header">
+	<i>gst_vc1_parse_field_header</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_field_header (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                            <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                            <a title="GstVC1FrameHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameHdr">GstVC1FrameHdr</a> * fieldhdr,
+                            <a title="GstVC1SeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> * seqhdr,
+                            <a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> * bitplanes)</pre>
+
+<p>Parses <em>data</em>, and fills <em>fieldhdr</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>fieldhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameHdr">GstVC1FrameHdr</a> to fill.</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> currently being parsed</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>bitplanes</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> to store bitplanes in or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null" data-gi-title-javascript="null" data-gi-href-python="https://docs.python.org/3/library/constants.html#None" data-gi-title-python="None">NULL</a></p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_frame_header">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_frame_header">
+	<i>gst_vc1_parse_frame_header</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_frame_header (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                            <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                            <a title="GstVC1FrameHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameHdr">GstVC1FrameHdr</a> * framehdr,
+                            <a title="GstVC1SeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> * seqhdr,
+                            <a title="GstVC1BitPlanes" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> * bitplanes)</pre>
+
+<p>Parses <em>data</em>, and fills <em>entrypoint</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>framehdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameHdr">GstVC1FrameHdr</a> to fill.</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> currently being parsed</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>bitplanes</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1BitPlanes">GstVC1BitPlanes</a> to store bitplanes in or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null" data-gi-title-javascript="null" data-gi-href-python="https://docs.python.org/3/library/constants.html#None" data-gi-title-python="None">NULL</a></p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_frame_layer">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_frame_layer">
+	<i>gst_vc1_parse_frame_layer</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_frame_layer (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                           <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                           <a title="GstVC1FrameLayer" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameLayer">GstVC1FrameLayer</a> * framelayer)</pre>
+
+<p>Parses <em>data</em>, and fills <em>framelayer</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>framelayer</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameLayer">GstVC1FrameLayer</a> to fill.</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_sequence_header">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_sequence_header">
+	<i>gst_vc1_parse_sequence_header</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_sequence_header (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                               <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                               <a title="GstVC1SeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> * seqhdr)</pre>
+
+<p>Parses <em>data</em>, and fills <em>seqhdr</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> to set.</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_sequence_header_struct_a">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_sequence_header_struct_a">
+	<i>gst_vc1_parse_sequence_header_struct_a</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_sequence_header_struct_a (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                                        <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                                        <a title="GstVC1SeqStructA" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructA">GstVC1SeqStructA</a> * structa)</pre>
+
+<p>Parses <em>data</em>, and fills <em>structa</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>structa</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructA">GstVC1SeqStructA</a> to set.</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_sequence_header_struct_b">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_sequence_header_struct_b">
+	<i>gst_vc1_parse_sequence_header_struct_b</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_sequence_header_struct_b (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                                        <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                                        <a title="GstVC1SeqStructB" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructB">GstVC1SeqStructB</a> * structb)</pre>
+
+<p>Parses <em>data</em>, and fills <em>structb</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>structb</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructB">GstVC1SeqStructB</a> to set.</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_sequence_header_struct_c">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_sequence_header_struct_c">
+	<i>gst_vc1_parse_sequence_header_struct_c</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_sequence_header_struct_c (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                                        <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                                        <a title="GstVC1SeqStructC" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructC">GstVC1SeqStructC</a> * structc)</pre>
+
+<p>Parses <em>data</em>, and fills <em>structc</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>structc</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructC">GstVC1SeqStructC</a> to set.</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="gst_vc1_parse_sequence_layer">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_sequence_layer">
+	<i>gst_vc1_parse_sequence_layer</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_sequence_layer (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                              <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                              <a title="GstVC1SeqLayer" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqLayer">GstVC1SeqLayer</a> * seqlayer)</pre>
+
+<p>Parses <em>data</em>, and fills <em>seqlayer</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>the size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqlayer</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqLayer">GstVC1SeqLayer</a> to set.</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="since:1.2;" id="gst_vc1_parse_slice_header">
+	
+
+
+
+<h3 data-hotdoc-id="gst_vc1_parse_slice_header">
+	<i>gst_vc1_parse_slice_header</i>
+</h3>
+
+
+
+
+<pre class="c-prototype language-c">
+<a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a>
+gst_vc1_parse_slice_header (const <a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> * data,
+                            <a title="gsize" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">gsize</a> size,
+                            <a title="GstVC1SliceHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SliceHdr">GstVC1SliceHdr</a> * slicehdr,
+                            <a title="GstVC1SeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> * seqhdr)</pre>
+
+<p>Parses <em>data</em>, and fills <em>slicehdr</em> fields.</p>
+
+
+
+	<div class="parameters-container">
+		<p><b>Parameters:</b></p>
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>data</code></em></i>
+–
+</div>
+<p>The data to parse</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>size</code></em></i>
+–
+</div>
+<p>The size of <em>data</em></p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>slicehdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SliceHdr">GstVC1SliceHdr</a> to fill</p>
+
+</div>
+
+					
+<div class="symbol-detail">
+	<div>
+		<i><em><code>seqhdr</code></em></i>
+–
+</div>
+<p>The <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqHdr">GstVC1SeqHdr</a> that was previously parsed</p>
+
+</div>
+
+			</div>
+
+		<div class="return-values-container">
+		<div class="symbol-detail">
+			<div>
+				<b>Returns</b>
+<span>(</span><a title="GstVC1ParserResult" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a><span>)</span>
+–
+			</div>
+							<p>a <a href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1ParserResult">GstVC1ParserResult</a></p>
+
+					</div>
+	</div>
+
+
+
+
+	<p>
+	<b>Since</b>			: 1.2
+		</p>
+
+<hr>
+
+</div>
+
+
+            <h2 class="symbol_section">Structures</h2>
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1AdvancedSeqHdr">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1AdvancedSeqHdr">
+	<i>GstVC1AdvancedSeqHdr</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1AdvancedSeqHdr
+{
+  GstVC1Level  level;
+
+  guint8  frmrtq_postproc;
+  guint8  bitrtq_postproc;
+  guint8  postprocflag;
+  guint16 max_coded_width;
+  guint16 max_coded_height;
+  guint8  pulldown;
+  guint8  interlace;
+  guint8  tfcntrflag;
+  guint8  finterpflag;
+  guint8  psf;
+  guint8  display_ext;
+  guint16 disp_horiz_size;
+  guint16 disp_vert_size;
+  guint8  aspect_ratio_flag;
+  guint8  aspect_ratio;
+  guint8  aspect_horiz_size;
+  guint8  aspect_vert_size;
+  guint8  framerate_flag;
+  guint8  framerateind;
+  guint8  frameratenr;
+  guint8  frameratedr;
+  guint16 framerateexp;
+  guint8  color_format_flag;
+  guint8  color_prim;
+  guint8  transfer_char;
+  guint8  matrix_coef;
+  guint8  hrd_param_flag;
+  guint8  colordiff_format;
+
+  GstVC1HrdParam hrd_param;
+
+  /* computed */
+  guint framerate; /* Around in fps, 0 if unknown*/
+  guint bitrate;   /* Around in kpbs, 0 if unknown*/
+  guint par_n;
+  guint par_d;
+  guint fps_n;
+  guint fps_d;
+
+  /* The last parsed entry point */
+  GstVC1EntryPointHdr entrypoint;
+};
+</pre>
+
+<p>Structure for the advanced profile sequence headers specific parameters.</p>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.level">
+	<div>
+		<i><em><code>level</code></em></i>
+		(<a title="GstVC1Level" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1Level">GstVC1Level</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.frmrtq_postproc">
+	<div>
+		<i><em><code>frmrtq_postproc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.bitrtq_postproc">
+	<div>
+		<i><em><code>bitrtq_postproc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.postprocflag">
+	<div>
+		<i><em><code>postprocflag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.max_coded_width">
+	<div>
+		<i><em><code>max_coded_width</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.max_coded_height">
+	<div>
+		<i><em><code>max_coded_height</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.pulldown">
+	<div>
+		<i><em><code>pulldown</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.interlace">
+	<div>
+		<i><em><code>interlace</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.tfcntrflag">
+	<div>
+		<i><em><code>tfcntrflag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.finterpflag">
+	<div>
+		<i><em><code>finterpflag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.psf">
+	<div>
+		<i><em><code>psf</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.display_ext">
+	<div>
+		<i><em><code>display_ext</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.disp_horiz_size">
+	<div>
+		<i><em><code>disp_horiz_size</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.disp_vert_size">
+	<div>
+		<i><em><code>disp_vert_size</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.aspect_ratio_flag">
+	<div>
+		<i><em><code>aspect_ratio_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.aspect_ratio">
+	<div>
+		<i><em><code>aspect_ratio</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.aspect_horiz_size">
+	<div>
+		<i><em><code>aspect_horiz_size</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.aspect_vert_size">
+	<div>
+		<i><em><code>aspect_vert_size</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.framerate_flag">
+	<div>
+		<i><em><code>framerate_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.framerateind">
+	<div>
+		<i><em><code>framerateind</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.frameratenr">
+	<div>
+		<i><em><code>frameratenr</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.frameratedr">
+	<div>
+		<i><em><code>frameratedr</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.framerateexp">
+	<div>
+		<i><em><code>framerateexp</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.color_format_flag">
+	<div>
+		<i><em><code>color_format_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.color_prim">
+	<div>
+		<i><em><code>color_prim</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.transfer_char">
+	<div>
+		<i><em><code>transfer_char</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.matrix_coef">
+	<div>
+		<i><em><code>matrix_coef</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.hrd_param_flag">
+	<div>
+		<i><em><code>hrd_param_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.colordiff_format">
+	<div>
+		<i><em><code>colordiff_format</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.hrd_param">
+	<div>
+		<i><em><code>hrd_param</code></em></i>
+		(<a title="GstVC1HrdParam" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1HrdParam">GstVC1HrdParam</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.framerate">
+	<div>
+		<i><em><code>framerate</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.bitrate">
+	<div>
+		<i><em><code>bitrate</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.par_n">
+	<div>
+		<i><em><code>par_n</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.par_d">
+	<div>
+		<i><em><code>par_d</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.fps_n">
+	<div>
+		<i><em><code>fps_n</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.fps_d">
+	<div>
+		<i><em><code>fps_d</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1AdvancedSeqHdr.entrypoint">
+	<div>
+		<i><em><code>entrypoint</code></em></i>
+		(<a title="GstVC1EntryPointHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1EntryPointHdr">GstVC1EntryPointHdr</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1BDU">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1BDU">
+	<i>GstVC1BDU</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1BDU
+{
+  GstVC1StartCode type;
+  guint size;
+  guint sc_offset;
+  guint offset;
+  guint8 * data;
+};
+</pre>
+
+<p>Structure that represents a Bitstream Data Unit.</p>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BDU.type">
+	<div>
+		<i><em><code>type</code></em></i>
+		(<a title="GstVC1StartCode" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1StartCode">GstVC1StartCode</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BDU.size">
+	<div>
+		<i><em><code>size</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BDU.sc_offset">
+	<div>
+		<i><em><code>sc_offset</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BDU.offset">
+	<div>
+		<i><em><code>offset</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BDU.data">
+	<div>
+		<i><em><code>data</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1BitPlanes">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1BitPlanes">
+	<i>GstVC1BitPlanes</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1BitPlanes
+{
+  guint8  *acpred;
+  guint8  *fieldtx;
+  guint8  *overflags;
+  guint8  *mvtypemb;
+  guint8  *skipmb;
+  guint8  *directmb;
+  guint8  *forwardmb;
+
+  guint size; /* Size of the arrays */
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.acpred">
+	<div>
+		<i><em><code>acpred</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.fieldtx">
+	<div>
+		<i><em><code>fieldtx</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.overflags">
+	<div>
+		<i><em><code>overflags</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.mvtypemb">
+	<div>
+		<i><em><code>mvtypemb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.skipmb">
+	<div>
+		<i><em><code>skipmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.directmb">
+	<div>
+		<i><em><code>directmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.forwardmb">
+	<div>
+		<i><em><code>forwardmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a> *)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1BitPlanes.size">
+	<div>
+		<i><em><code>size</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1EntryPointHdr">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1EntryPointHdr">
+	<i>GstVC1EntryPointHdr</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1EntryPointHdr
+{
+  guint8 broken_link;
+  guint8 closed_entry;
+  guint8 panscan_flag;
+  guint8 refdist_flag;
+  guint8 loopfilter;
+  guint8 fastuvmc;
+  guint8 extended_mv;
+  guint8 dquant;
+  guint8 vstransform;
+  guint8 overlap;
+  guint8 quantizer;
+  guint8 coded_size_flag;
+  guint16 coded_width;
+  guint16 coded_height;
+  guint8 extended_dmv;
+  guint8 range_mapy_flag;
+  guint8 range_mapy;
+  guint8 range_mapuv_flag;
+  guint8 range_mapuv;
+
+  guint8 hrd_full[MAX_HRD_NUM_LEAKY_BUCKETS];
+};
+</pre>
+
+<p>Structure for entrypoint header, this will be used only in advanced profiles</p>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.broken_link">
+	<div>
+		<i><em><code>broken_link</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.closed_entry">
+	<div>
+		<i><em><code>closed_entry</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.panscan_flag">
+	<div>
+		<i><em><code>panscan_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.refdist_flag">
+	<div>
+		<i><em><code>refdist_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.loopfilter">
+	<div>
+		<i><em><code>loopfilter</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.fastuvmc">
+	<div>
+		<i><em><code>fastuvmc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.extended_mv">
+	<div>
+		<i><em><code>extended_mv</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.dquant">
+	<div>
+		<i><em><code>dquant</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.vstransform">
+	<div>
+		<i><em><code>vstransform</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.overlap">
+	<div>
+		<i><em><code>overlap</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.quantizer">
+	<div>
+		<i><em><code>quantizer</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.coded_size_flag">
+	<div>
+		<i><em><code>coded_size_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.coded_width">
+	<div>
+		<i><em><code>coded_width</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.coded_height">
+	<div>
+		<i><em><code>coded_height</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.extended_dmv">
+	<div>
+		<i><em><code>extended_dmv</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.range_mapy_flag">
+	<div>
+		<i><em><code>range_mapy_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.range_mapy">
+	<div>
+		<i><em><code>range_mapy</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.range_mapuv_flag">
+	<div>
+		<i><em><code>range_mapuv_flag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.range_mapuv">
+	<div>
+		<i><em><code>range_mapuv</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1EntryPointHdr.hrd_full">
+	<div>
+		<i><em><code>hrd_full</code></em></i>
+		(guint8 [31] )
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1FrameHdr">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1FrameHdr">
+	<i>GstVC1FrameHdr</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1FrameHdr
+{
+  /* common fields */
+  GstVC1PictureType ptype;
+  guint8 interpfrm;
+  guint8 halfqp;
+  guint8 transacfrm;
+  guint8 transdctab;
+  guint8 pqindex;
+  guint8 pquantizer;
+
+  /* Computed */
+  guint8 pquant;
+
+  /* Convenience fields */
+  guint8 profile;
+  guint8 dquant;
+
+  /*  If dquant */
+  GstVC1VopDquant vopdquant;
+
+  union {
+    GstVC1PicSimpleMain simple;
+    GstVC1PicAdvanced advanced;
+  } pic;
+
+  /* Size of the picture layer in bits */
+  guint header_size;
+};
+</pre>
+
+<p>Structure that represent picture in any profile or mode.
+You should look at <em>ptype</em> and <em>profile</em> to know what is currently
+in use.</p>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.ptype">
+	<div>
+		<i><em><code>ptype</code></em></i>
+		(<a title="GstVC1PictureType" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1PictureType">GstVC1PictureType</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.interpfrm">
+	<div>
+		<i><em><code>interpfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.halfqp">
+	<div>
+		<i><em><code>halfqp</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.transacfrm">
+	<div>
+		<i><em><code>transacfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.transdctab">
+	<div>
+		<i><em><code>transdctab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.pqindex">
+	<div>
+		<i><em><code>pqindex</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.pquantizer">
+	<div>
+		<i><em><code>pquantizer</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.pquant">
+	<div>
+		<i><em><code>pquant</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.profile">
+	<div>
+		<i><em><code>profile</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.dquant">
+	<div>
+		<i><em><code>dquant</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.vopdquant">
+	<div>
+		<i><em><code>vopdquant</code></em></i>
+		(<a title="GstVC1VopDquant" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1VopDquant">GstVC1VopDquant</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.pic.simple">
+	<div>
+		<i><em><code>pic.simple</code></em></i>
+		(<a title="GstVC1PicSimpleMain" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1PicSimpleMain">GstVC1PicSimpleMain</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.pic.advanced">
+	<div>
+		<i><em><code>pic.advanced</code></em></i>
+		(<a title="GstVC1PicAdvanced" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1PicAdvanced">GstVC1PicAdvanced</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameHdr.header_size">
+	<div>
+		<i><em><code>header_size</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1FrameLayer">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1FrameLayer">
+	<i>GstVC1FrameLayer</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1FrameLayer
+{
+  guint8 key;
+  guint32 framesize;
+
+  guint32 timestamp;
+
+  /* calculated */
+  guint32 next_framelayer_offset;
+  guint8 skiped_p_frame;
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameLayer.key">
+	<div>
+		<i><em><code>key</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameLayer.framesize">
+	<div>
+		<i><em><code>framesize</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameLayer.timestamp">
+	<div>
+		<i><em><code>timestamp</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameLayer.next_framelayer_offset">
+	<div>
+		<i><em><code>next_framelayer_offset</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1FrameLayer.skiped_p_frame">
+	<div>
+		<i><em><code>skiped_p_frame</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1HrdParam">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1HrdParam">
+	<i>GstVC1HrdParam</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1HrdParam
+{
+  guint8 hrd_num_leaky_buckets;
+  guint8 bit_rate_exponent;
+  guint8 buffer_size_exponent;
+  guint16 hrd_rate[MAX_HRD_NUM_LEAKY_BUCKETS];
+  guint16 hrd_buffer[MAX_HRD_NUM_LEAKY_BUCKETS];
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1HrdParam.hrd_num_leaky_buckets">
+	<div>
+		<i><em><code>hrd_num_leaky_buckets</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1HrdParam.bit_rate_exponent">
+	<div>
+		<i><em><code>bit_rate_exponent</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1HrdParam.buffer_size_exponent">
+	<div>
+		<i><em><code>buffer_size_exponent</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1HrdParam.hrd_rate">
+	<div>
+		<i><em><code>hrd_rate</code></em></i>
+		(guint16 [31] )
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1HrdParam.hrd_buffer">
+	<div>
+		<i><em><code>hrd_buffer</code></em></i>
+		(guint16 [31] )
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1PicAdvanced">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1PicAdvanced">
+	<i>GstVC1PicAdvanced</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1PicAdvanced
+{
+  GstVC1FrameCodingMode fcm;
+  guint8  tfcntr;
+
+  guint8  rptfrm;
+  guint8  tff;
+  guint8  rff;
+  guint8  ps_present;
+  guint32 ps_hoffset;
+  guint32 ps_voffset;
+  guint16 ps_width;
+  guint16 ps_height;
+  guint8  rndctrl;
+  guint8  uvsamp;
+  guint8  postproc;
+
+  /*  B and P picture specific */
+  guint8  mvrange;
+  guint8  mvmode;
+  guint8  mvtab;
+  guint8  cbptab;
+  guint8  ttmbf;
+  guint8  ttfrm;
+
+  /* B and BI picture only
+   * Should be divided by #GST_VC1_BFRACTION_BASIS
+   * to get the real value. */
+  guint16 bfraction;
+
+  /* ppic */
+  guint8  mvmode2;
+  guint8  lumscale;
+  guint8  lumshift;
+
+  /* bipic */
+  guint8  bf;
+  guint8  condover;
+  guint8  transacfrm2;
+
+  /* Biplane value, those fields only mention the fact
+   * that the bitplane is in raw mode or not */
+  guint8  acpred;
+  guint8  overflags;
+  guint8  mvtypemb;
+  guint8  skipmb;
+  guint8  directmb;
+  guint8  forwardmb; /* B pic interlace field only */
+
+  /* For interlaced pictures only */
+  guint8  fieldtx;
+
+  /* P and B pictures */
+  guint8  intcomp;
+  guint8  dmvrange;
+  guint8  mbmodetab;
+  guint8  imvtab;
+  guint8  icbptab;
+  guint8  mvbptab2;
+  guint8  mvbptab4; /* If 4mvswitch in ppic */
+
+  /*  P picture */
+  guint8  mvswitch4;
+
+  /* For interlaced fields only */
+  guint16 refdist;
+  guint8 fptype; /* Raw value */
+
+  /* P pic */
+  guint8  numref;
+  guint8  reffield;
+  guint8  lumscale2;
+  guint8  lumshift2;
+  guint8  intcompfield;
+
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.fcm">
+	<div>
+		<i><em><code>fcm</code></em></i>
+		(<a title="GstVC1FrameCodingMode" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1FrameCodingMode">GstVC1FrameCodingMode</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.tfcntr">
+	<div>
+		<i><em><code>tfcntr</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.rptfrm">
+	<div>
+		<i><em><code>rptfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.tff">
+	<div>
+		<i><em><code>tff</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.rff">
+	<div>
+		<i><em><code>rff</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ps_present">
+	<div>
+		<i><em><code>ps_present</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ps_hoffset">
+	<div>
+		<i><em><code>ps_hoffset</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ps_voffset">
+	<div>
+		<i><em><code>ps_voffset</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ps_width">
+	<div>
+		<i><em><code>ps_width</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ps_height">
+	<div>
+		<i><em><code>ps_height</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.rndctrl">
+	<div>
+		<i><em><code>rndctrl</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.uvsamp">
+	<div>
+		<i><em><code>uvsamp</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.postproc">
+	<div>
+		<i><em><code>postproc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvrange">
+	<div>
+		<i><em><code>mvrange</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvmode">
+	<div>
+		<i><em><code>mvmode</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvtab">
+	<div>
+		<i><em><code>mvtab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.cbptab">
+	<div>
+		<i><em><code>cbptab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ttmbf">
+	<div>
+		<i><em><code>ttmbf</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.ttfrm">
+	<div>
+		<i><em><code>ttfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.bfraction">
+	<div>
+		<i><em><code>bfraction</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvmode2">
+	<div>
+		<i><em><code>mvmode2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.lumscale">
+	<div>
+		<i><em><code>lumscale</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.lumshift">
+	<div>
+		<i><em><code>lumshift</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.bf">
+	<div>
+		<i><em><code>bf</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.condover">
+	<div>
+		<i><em><code>condover</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.transacfrm2">
+	<div>
+		<i><em><code>transacfrm2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.acpred">
+	<div>
+		<i><em><code>acpred</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.overflags">
+	<div>
+		<i><em><code>overflags</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvtypemb">
+	<div>
+		<i><em><code>mvtypemb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.skipmb">
+	<div>
+		<i><em><code>skipmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.directmb">
+	<div>
+		<i><em><code>directmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.forwardmb">
+	<div>
+		<i><em><code>forwardmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.fieldtx">
+	<div>
+		<i><em><code>fieldtx</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.intcomp">
+	<div>
+		<i><em><code>intcomp</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.dmvrange">
+	<div>
+		<i><em><code>dmvrange</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mbmodetab">
+	<div>
+		<i><em><code>mbmodetab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.imvtab">
+	<div>
+		<i><em><code>imvtab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.icbptab">
+	<div>
+		<i><em><code>icbptab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvbptab2">
+	<div>
+		<i><em><code>mvbptab2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvbptab4">
+	<div>
+		<i><em><code>mvbptab4</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.mvswitch4">
+	<div>
+		<i><em><code>mvswitch4</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.refdist">
+	<div>
+		<i><em><code>refdist</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.fptype">
+	<div>
+		<i><em><code>fptype</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.numref">
+	<div>
+		<i><em><code>numref</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.reffield">
+	<div>
+		<i><em><code>reffield</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.lumscale2">
+	<div>
+		<i><em><code>lumscale2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.lumshift2">
+	<div>
+		<i><em><code>lumshift2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicAdvanced.intcompfield">
+	<div>
+		<i><em><code>intcompfield</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1PicSimpleMain">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1PicSimpleMain">
+	<i>GstVC1PicSimpleMain</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1PicSimpleMain
+{
+  guint8 frmcnt;
+  guint8 mvrange;
+  guint8 rangeredfrm;
+
+  /* I and P pic simple and main profiles only */
+  guint8 respic;
+
+  /* I and BI pic simple and main profiles only */
+  guint8 transacfrm2;
+  guint8 bf;
+
+  /* B and P pic simple and main profiles only */
+  guint8 mvmode;
+  guint8 mvtab;
+  guint8 ttmbf;
+
+  /* P pic simple and main profiles only */
+  guint8 mvmode2;
+  guint8 lumscale;
+  guint8 lumshift;
+
+  guint8 cbptab;
+  guint8 ttfrm;
+
+  /* B and BI picture only
+   * Should be divided by #GST_VC1_BFRACTION_BASIS
+   * to get the real value. */
+  guint16 bfraction;
+
+  /* Biplane value, those fields only mention the fact
+   * that the bitplane is in raw mode or not */
+  guint8 mvtypemb;
+  guint8 skipmb;
+  guint8 directmb; /* B pic main profile only */
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.frmcnt">
+	<div>
+		<i><em><code>frmcnt</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.mvrange">
+	<div>
+		<i><em><code>mvrange</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.rangeredfrm">
+	<div>
+		<i><em><code>rangeredfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.respic">
+	<div>
+		<i><em><code>respic</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.transacfrm2">
+	<div>
+		<i><em><code>transacfrm2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.bf">
+	<div>
+		<i><em><code>bf</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.mvmode">
+	<div>
+		<i><em><code>mvmode</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.mvtab">
+	<div>
+		<i><em><code>mvtab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.ttmbf">
+	<div>
+		<i><em><code>ttmbf</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.mvmode2">
+	<div>
+		<i><em><code>mvmode2</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.lumscale">
+	<div>
+		<i><em><code>lumscale</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.lumshift">
+	<div>
+		<i><em><code>lumshift</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.cbptab">
+	<div>
+		<i><em><code>cbptab</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.ttfrm">
+	<div>
+		<i><em><code>ttfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.bfraction">
+	<div>
+		<i><em><code>bfraction</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.mvtypemb">
+	<div>
+		<i><em><code>mvtypemb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.skipmb">
+	<div>
+		<i><em><code>skipmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1PicSimpleMain.directmb">
+	<div>
+		<i><em><code>directmb</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1SeqHdr">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1SeqHdr">
+	<i>GstVC1SeqHdr</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1SeqHdr
+{
+  GstVC1Profile profile;
+
+  GstVC1SeqStructC struct_c;
+
+  /*  calculated */
+  guint mb_height;
+  guint mb_width;
+  guint mb_stride;
+
+  GstVC1AdvancedSeqHdr   advanced;
+
+};
+</pre>
+
+<p>Structure for sequence headers in any profile.</p>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqHdr.profile">
+	<div>
+		<i><em><code>profile</code></em></i>
+		(<a title="GstVC1Profile" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1Profile">GstVC1Profile</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqHdr.struct_c">
+	<div>
+		<i><em><code>struct_c</code></em></i>
+		(<a title="GstVC1SeqStructC" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructC">GstVC1SeqStructC</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqHdr.mb_height">
+	<div>
+		<i><em><code>mb_height</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqHdr.mb_width">
+	<div>
+		<i><em><code>mb_width</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqHdr.mb_stride">
+	<div>
+		<i><em><code>mb_stride</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqHdr.advanced">
+	<div>
+		<i><em><code>advanced</code></em></i>
+		(<a title="GstVC1AdvancedSeqHdr" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1AdvancedSeqHdr">GstVC1AdvancedSeqHdr</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1SeqLayer">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1SeqLayer">
+	<i>GstVC1SeqLayer</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1SeqLayer
+{
+  guint32 numframes;
+
+  GstVC1SeqStructA struct_a;
+  GstVC1SeqStructB struct_b;
+  GstVC1SeqStructC struct_c;
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqLayer.numframes">
+	<div>
+		<i><em><code>numframes</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqLayer.struct_a">
+	<div>
+		<i><em><code>struct_a</code></em></i>
+		(<a title="GstVC1SeqStructA" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructA">GstVC1SeqStructA</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqLayer.struct_b">
+	<div>
+		<i><em><code>struct_b</code></em></i>
+		(<a title="GstVC1SeqStructB" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructB">GstVC1SeqStructB</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqLayer.struct_c">
+	<div>
+		<i><em><code>struct_c</code></em></i>
+		(<a title="GstVC1SeqStructC" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1SeqStructC">GstVC1SeqStructC</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1SeqStructA">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1SeqStructA">
+	<i>GstVC1SeqStructA</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1SeqStructA
+{
+  guint32 vert_size;
+  guint32 horiz_size;
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructA.vert_size">
+	<div>
+		<i><em><code>vert_size</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructA.horiz_size">
+	<div>
+		<i><em><code>horiz_size</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1SeqStructB">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1SeqStructB">
+	<i>GstVC1SeqStructB</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1SeqStructB
+{
+  GstVC1Level  level;
+
+  guint8 cbr;
+  guint32 framerate;
+
+  /* In simple and main profiles only */
+  guint32 hrd_buffer;
+  guint32 hrd_rate;
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructB.level">
+	<div>
+		<i><em><code>level</code></em></i>
+		(<a title="GstVC1Level" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1Level">GstVC1Level</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructB.cbr">
+	<div>
+		<i><em><code>cbr</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructB.framerate">
+	<div>
+		<i><em><code>framerate</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructB.hrd_buffer">
+	<div>
+		<i><em><code>hrd_buffer</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructB.hrd_rate">
+	<div>
+		<i><em><code>hrd_rate</code></em></i>
+		(<a title="guint32" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint32</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1SeqStructC">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1SeqStructC">
+	<i>GstVC1SeqStructC</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1SeqStructC
+{
+  GstVC1Profile profile;
+
+  /* Only in simple and main profiles */
+  guint8 frmrtq_postproc;
+  guint8 bitrtq_postproc;
+  guint8 res_sprite;
+  guint8 loop_filter;
+  guint8 multires;
+  guint8 fastuvmc;
+  guint8 extended_mv;
+  guint8 dquant;
+  guint8 vstransform;
+  guint8 overlap;
+  guint8 syncmarker;
+  guint8 rangered;
+  guint8 maxbframes;
+  guint8 quantizer;
+  guint8 finterpflag;
+
+  /* Computed */
+  guint framerate; /* Around in fps, 0 if unknown*/
+  guint bitrate;   /* Around in kpbs, 0 if unknown*/
+
+  /* This should be filled by user if previously known */
+  guint16 coded_width;
+  /* This should be filled by user if previously known */
+  guint16 coded_height;
+
+  /* Wmvp specific */
+  guint8 wmvp;          /* Specify if the stream is wmp or not */
+  /* In the wmvp case, the framerate is not computed but in the bitstream */
+  guint8 slice_code;
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.profile">
+	<div>
+		<i><em><code>profile</code></em></i>
+		(<a title="GstVC1Profile" href="gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1Profile">GstVC1Profile</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.frmrtq_postproc">
+	<div>
+		<i><em><code>frmrtq_postproc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.bitrtq_postproc">
+	<div>
+		<i><em><code>bitrtq_postproc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.res_sprite">
+	<div>
+		<i><em><code>res_sprite</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.loop_filter">
+	<div>
+		<i><em><code>loop_filter</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.multires">
+	<div>
+		<i><em><code>multires</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.fastuvmc">
+	<div>
+		<i><em><code>fastuvmc</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.extended_mv">
+	<div>
+		<i><em><code>extended_mv</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.dquant">
+	<div>
+		<i><em><code>dquant</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.vstransform">
+	<div>
+		<i><em><code>vstransform</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.overlap">
+	<div>
+		<i><em><code>overlap</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.syncmarker">
+	<div>
+		<i><em><code>syncmarker</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.rangered">
+	<div>
+		<i><em><code>rangered</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.maxbframes">
+	<div>
+		<i><em><code>maxbframes</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.quantizer">
+	<div>
+		<i><em><code>quantizer</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.finterpflag">
+	<div>
+		<i><em><code>finterpflag</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.framerate">
+	<div>
+		<i><em><code>framerate</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.bitrate">
+	<div>
+		<i><em><code>bitrate</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.coded_width">
+	<div>
+		<i><em><code>coded_width</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.coded_height">
+	<div>
+		<i><em><code>coded_height</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.wmvp">
+	<div>
+		<i><em><code>wmvp</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SeqStructC.slice_code">
+	<div>
+		<i><em><code>slice_code</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1SliceHdr">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1SliceHdr">
+	<i>GstVC1SliceHdr</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1SliceHdr
+{
+  guint16 slice_addr;
+
+  /* Size of the slice layer in bits */
+  guint header_size;
+};
+</pre>
+
+<p>Structure that represents slice layer in advanced profile.</p>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SliceHdr.slice_addr">
+	<div>
+		<i><em><code>slice_addr</code></em></i>
+		(<a title="guint16" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint16</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1SliceHdr.header_size">
+	<div>
+		<i><em><code>header_size</code></em></i>
+		(<a title="guint" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1VopDquant">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1VopDquant">
+	<i>GstVC1VopDquant</i>
+</h3>
+
+
+<pre class="raw_code">
+struct _GstVC1VopDquant
+{
+  guint8 pqdiff;
+  guint8 abspq;
+
+  /* Computed */
+  guint8 altpquant;
+
+  /*  if dqant != 2*/
+  guint8 dquantfrm;
+  guint8 dqprofile;
+
+  /* Boundary edge selection. This represents DQSBEDGE
+   * if dqprofile == GST_VC1_DQPROFILE_SINGLE_EDGE or
+   * DQDBEDGE if dqprofile == GST_VC1_DQPROFILE_DOUBLE_EDGE */
+  guint8 dqbedge;
+
+  /* FIXME: remove */
+  guint8 unused;
+
+  /* if dqprofile == GST_VC1_DQPROFILE_ALL_MBS */
+  guint8 dqbilevel;
+
+};
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Fields</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.pqdiff">
+	<div>
+		<i><em><code>pqdiff</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.abspq">
+	<div>
+		<i><em><code>abspq</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.altpquant">
+	<div>
+		<i><em><code>altpquant</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.dquantfrm">
+	<div>
+		<i><em><code>dquantfrm</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.dqprofile">
+	<div>
+		<i><em><code>dqprofile</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.dqbedge">
+	<div>
+		<i><em><code>dqbedge</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.unused">
+	<div>
+		<i><em><code>unused</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="_GstVC1VopDquant.dqbilevel">
+	<div>
+		<i><em><code>dqbilevel</code></em></i>
+		(<a title="guint8" href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8" data-gi-href-javascript="https://developer.mozilla.org/en-US/docs/Glossary/Number" data-gi-title-javascript="Number" data-gi-href-python="https://docs.python.org/3/library/functions.html#int" data-gi-title-python="int">guint8</a>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+
+            <h2 class="symbol_section">Enumerations</h2>
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1Condover">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1Condover">
+	<i>GstVC1Condover</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum {
+  GST_VC1_CONDOVER_NONE,
+  GST_VC1_CONDOVER_ALL,
+  GST_VC1_CONDOVER_SELECT
+} GstVC1Condover;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_CONDOVER_NONE">
+	<div>
+		<i><em><code>GST_VC1_CONDOVER_NONE</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_CONDOVER_ALL">
+	<div>
+		<i><em><code>GST_VC1_CONDOVER_ALL</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_CONDOVER_SELECT">
+	<div>
+		<i><em><code>GST_VC1_CONDOVER_SELECT</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1DQProfile">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1DQProfile">
+	<i>GstVC1DQProfile</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum {
+  GST_VC1_DQPROFILE_FOUR_EDGES,
+  GST_VC1_DQPROFILE_DOUBLE_EDGES,
+  GST_VC1_DQPROFILE_SINGLE_EDGE,
+  GST_VC1_DQPROFILE_ALL_MBS
+} GstVC1DQProfile;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_DQPROFILE_FOUR_EDGES">
+	<div>
+		<i><em><code>GST_VC1_DQPROFILE_FOUR_EDGES</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_DQPROFILE_DOUBLE_EDGES">
+	<div>
+		<i><em><code>GST_VC1_DQPROFILE_DOUBLE_EDGES</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_DQPROFILE_SINGLE_EDGE">
+	<div>
+		<i><em><code>GST_VC1_DQPROFILE_SINGLE_EDGE</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_DQPROFILE_ALL_MBS">
+	<div>
+		<i><em><code>GST_VC1_DQPROFILE_ALL_MBS</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1FrameCodingMode">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1FrameCodingMode">
+	<i>GstVC1FrameCodingMode</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum
+{
+  GST_VC1_FRAME_PROGRESSIVE = 0x0,
+  GST_VC1_FRAME_INTERLACE   = 0x10,
+  GST_VC1_FIELD_INTERLACE   = 0x11
+} GstVC1FrameCodingMode;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FRAME_PROGRESSIVE">
+	<div>
+		<i><em><code>GST_VC1_FRAME_PROGRESSIVE</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FRAME_INTERLACE">
+	<div>
+		<i><em><code>GST_VC1_FRAME_INTERLACE</code></em></i>
+		(<span class="value">16</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FIELD_INTERLACE">
+	<div>
+		<i><em><code>GST_VC1_FIELD_INTERLACE</code></em></i>
+		(<span class="value">17</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1Level">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1Level">
+	<i>GstVC1Level</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum
+{
+    GST_VC1_LEVEL_LOW    = 0,    /* Simple/Main profile low level */
+    GST_VC1_LEVEL_MEDIUM = 2,    /* Simple/Main profile medium level */
+    GST_VC1_LEVEL_HIGH   = 4,   /* Main profile high level */
+
+    GST_VC1_LEVEL_L0    = 0,    /* Advanced profile level 0 */
+    GST_VC1_LEVEL_L1    = 1,    /* Advanced profile level 1 */
+    GST_VC1_LEVEL_L2    = 2,    /* Advanced profile level 2 */
+    GST_VC1_LEVEL_L3    = 3,    /* Advanced profile level 3 */
+    GST_VC1_LEVEL_L4    = 4,    /* Advanced profile level 4 */
+
+    /* 5 to 7 reserved */
+    GST_VC1_LEVEL_UNKNOWN = 255  /* Unknown profile */
+} GstVC1Level;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_LOW">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_LOW</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_MEDIUM">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_MEDIUM</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_HIGH">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_HIGH</code></em></i>
+		(<span class="value">4</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_L0">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_L0</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_L1">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_L1</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_L2">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_L2</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_L3">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_L3</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_L4">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_L4</code></em></i>
+		(<span class="value">4</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_LEVEL_UNKNOWN">
+	<div>
+		<i><em><code>GST_VC1_LEVEL_UNKNOWN</code></em></i>
+		(<span class="value">255</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1MvMode">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1MvMode">
+	<i>GstVC1MvMode</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum
+{
+  GST_VC1_MVMODE_1MV_HPEL_BILINEAR,
+  GST_VC1_MVMODE_1MV,
+  GST_VC1_MVMODE_1MV_HPEL,
+  GST_VC1_MVMODE_MIXED_MV,
+  GST_VC1_MVMODE_INTENSITY_COMP
+} GstVC1MvMode;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_MVMODE_1MV_HPEL_BILINEAR">
+	<div>
+		<i><em><code>GST_VC1_MVMODE_1MV_HPEL_BILINEAR</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_MVMODE_1MV">
+	<div>
+		<i><em><code>GST_VC1_MVMODE_1MV</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_MVMODE_1MV_HPEL">
+	<div>
+		<i><em><code>GST_VC1_MVMODE_1MV_HPEL</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_MVMODE_MIXED_MV">
+	<div>
+		<i><em><code>GST_VC1_MVMODE_MIXED_MV</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_MVMODE_INTENSITY_COMP">
+	<div>
+		<i><em><code>GST_VC1_MVMODE_INTENSITY_COMP</code></em></i>
+		(<span class="value">4</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1ParserResult">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1ParserResult">
+	<i>GstVC1ParserResult</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum {
+  GST_VC1_PARSER_OK,
+  GST_VC1_PARSER_BROKEN_DATA,
+  GST_VC1_PARSER_NO_BDU,
+  GST_VC1_PARSER_NO_BDU_END,
+  GST_VC1_PARSER_ERROR,
+} GstVC1ParserResult;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PARSER_OK">
+	<div>
+		<i><em><code>GST_VC1_PARSER_OK</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PARSER_BROKEN_DATA">
+	<div>
+		<i><em><code>GST_VC1_PARSER_BROKEN_DATA</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PARSER_NO_BDU">
+	<div>
+		<i><em><code>GST_VC1_PARSER_NO_BDU</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PARSER_NO_BDU_END">
+	<div>
+		<i><em><code>GST_VC1_PARSER_NO_BDU_END</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PARSER_ERROR">
+	<div>
+		<i><em><code>GST_VC1_PARSER_ERROR</code></em></i>
+		(<span class="value">4</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1PictureType">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1PictureType">
+	<i>GstVC1PictureType</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum
+{
+  GST_VC1_PICTURE_TYPE_P,
+  GST_VC1_PICTURE_TYPE_B,
+  GST_VC1_PICTURE_TYPE_I,
+  GST_VC1_PICTURE_TYPE_BI,
+  GST_VC1_PICTURE_TYPE_SKIPPED
+} GstVC1PictureType;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PICTURE_TYPE_P">
+	<div>
+		<i><em><code>GST_VC1_PICTURE_TYPE_P</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PICTURE_TYPE_B">
+	<div>
+		<i><em><code>GST_VC1_PICTURE_TYPE_B</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PICTURE_TYPE_I">
+	<div>
+		<i><em><code>GST_VC1_PICTURE_TYPE_I</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PICTURE_TYPE_BI">
+	<div>
+		<i><em><code>GST_VC1_PICTURE_TYPE_BI</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PICTURE_TYPE_SKIPPED">
+	<div>
+		<i><em><code>GST_VC1_PICTURE_TYPE_SKIPPED</code></em></i>
+		(<span class="value">4</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1Profile">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1Profile">
+	<i>GstVC1Profile</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum {
+  GST_VC1_PROFILE_SIMPLE,
+  GST_VC1_PROFILE_MAIN,
+  GST_VC1_PROFILE_RESERVED,
+  GST_VC1_PROFILE_ADVANCED
+} GstVC1Profile;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PROFILE_SIMPLE">
+	<div>
+		<i><em><code>GST_VC1_PROFILE_SIMPLE</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PROFILE_MAIN">
+	<div>
+		<i><em><code>GST_VC1_PROFILE_MAIN</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PROFILE_RESERVED">
+	<div>
+		<i><em><code>GST_VC1_PROFILE_RESERVED</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_PROFILE_ADVANCED">
+	<div>
+		<i><em><code>GST_VC1_PROFILE_ADVANCED</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1QuantizerSpec">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1QuantizerSpec">
+	<i>GstVC1QuantizerSpec</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum
+{
+  GST_VC1_QUANTIZER_IMPLICITLY,
+  GST_VC1_QUANTIZER_EXPLICITLY,
+  GST_VC1_QUANTIZER_NON_UNIFORM,
+  GST_VC1_QUANTIZER_UNIFORM
+} GstVC1QuantizerSpec;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_QUANTIZER_IMPLICITLY">
+	<div>
+		<i><em><code>GST_VC1_QUANTIZER_IMPLICITLY</code></em></i>
+		(<span class="value">0</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_QUANTIZER_EXPLICITLY">
+	<div>
+		<i><em><code>GST_VC1_QUANTIZER_EXPLICITLY</code></em></i>
+		(<span class="value">1</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_QUANTIZER_NON_UNIFORM">
+	<div>
+		<i><em><code>GST_VC1_QUANTIZER_NON_UNIFORM</code></em></i>
+		(<span class="value">2</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_QUANTIZER_UNIFORM">
+	<div>
+		<i><em><code>GST_VC1_QUANTIZER_UNIFORM</code></em></i>
+		(<span class="value">3</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+            
+
+<div class="base_symbol_container" data-hotdoc-tags="" id="GstVC1StartCode">
+	
+
+
+
+<h3 data-hotdoc-id="GstVC1StartCode">
+	<i>GstVC1StartCode</i>
+</h3>
+
+
+<pre class="raw_code">
+typedef enum {
+  GST_VC1_END_OF_SEQ       = 0x0A,
+  GST_VC1_SLICE            = 0x0B,
+  GST_VC1_FIELD            = 0x0C,
+  GST_VC1_FRAME            = 0x0D,
+  GST_VC1_ENTRYPOINT       = 0x0E,
+  GST_VC1_SEQUENCE         = 0x0F,
+  GST_VC1_SLICE_USER       = 0x1B,
+  GST_VC1_FIELD_USER       = 0x1C,
+  GST_VC1_FRAME_USER       = 0x1D,
+  GST_VC1_ENTRY_POINT_USER = 0x1E,
+  GST_VC1_SEQUENCE_USER    = 0x1F
+} GstVC1StartCode;
+</pre>
+
+
+
+
+	<div class="members-container">
+		<h4>Members</h4>
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_END_OF_SEQ">
+	<div>
+		<i><em><code>GST_VC1_END_OF_SEQ</code></em></i>
+		(<span class="value">10</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_SLICE">
+	<div>
+		<i><em><code>GST_VC1_SLICE</code></em></i>
+		(<span class="value">11</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FIELD">
+	<div>
+		<i><em><code>GST_VC1_FIELD</code></em></i>
+		(<span class="value">12</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FRAME">
+	<div>
+		<i><em><code>GST_VC1_FRAME</code></em></i>
+		(<span class="value">13</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_ENTRYPOINT">
+	<div>
+		<i><em><code>GST_VC1_ENTRYPOINT</code></em></i>
+		(<span class="value">14</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_SEQUENCE">
+	<div>
+		<i><em><code>GST_VC1_SEQUENCE</code></em></i>
+		(<span class="value">15</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_SLICE_USER">
+	<div>
+		<i><em><code>GST_VC1_SLICE_USER</code></em></i>
+		(<span class="value">27</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FIELD_USER">
+	<div>
+		<i><em><code>GST_VC1_FIELD_USER</code></em></i>
+		(<span class="value">28</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_FRAME_USER">
+	<div>
+		<i><em><code>GST_VC1_FRAME_USER</code></em></i>
+		(<span class="value">29</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_ENTRY_POINT_USER">
+	<div>
+		<i><em><code>GST_VC1_ENTRY_POINT_USER</code></em></i>
+		(<span class="value">30</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+					
+<div class="symbol-detail" data-hotdoc-id="GST_VC1_SEQUENCE_USER">
+	<div>
+		<i><em><code>GST_VC1_SEQUENCE_USER</code></em></i>
+		(<span class="value">31</span>)
+		–
+	</div>
+			<i>No description available</i>
+	</div>
+
+			</div>
+
+
+
+
+<hr>
+
+</div>
+
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
+</html>

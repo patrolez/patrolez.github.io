@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gstvideo.videodecoder.prototype.allocate_output_buffer","urls":[{"url":"video/gstvideodecoder.html#gst_video_decoder_allocate_output_buffer","node_type":"symbol","context":{"gi-language":["javascript"]}},{"url":"video/gstvideoutils.html#GstVideoCodecFrame","node_type":"p","context":{"gi-language":["javascript"]}}]});

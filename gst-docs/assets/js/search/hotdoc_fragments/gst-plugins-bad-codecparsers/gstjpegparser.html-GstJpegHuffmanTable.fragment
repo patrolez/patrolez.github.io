@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstjpegparser.html#GstJpegHuffmanTable","fragment":"\n\tGstJpegHuffmanTable\n\nFields\nHuffman table.\nNumber of Huffman codes of length i + 1 (Li)\nIf the Huffman table is valid, which means it has already\nbeen parsed\n\n\tSince\t\t\t: 1.6\n\t\t\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awstranscriber.html#awstranscriber:translate-lookahead","fragment":"\n\ttranslate-lookahead\n\nMaximum duration in milliseconds of transcript to lookahead before sending to translation when no separator was encountered\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t3000\n\n"});

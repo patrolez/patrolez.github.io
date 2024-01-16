@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"hlssink3/hlscmafsink.html#hlscmafsink:init-location","fragment":"\n\tinit-location\n\nLocation of the init fragment file to write\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tinit%%05d.mp4\n\n"});

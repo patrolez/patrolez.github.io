@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"playback-tutorial-2.c","urls":[{"url":"tutorials/playback/subtitle-management.html#the-multilingual-player-with-subtitles","node_type":"p","context":{"gi-language":["default"]}}]});

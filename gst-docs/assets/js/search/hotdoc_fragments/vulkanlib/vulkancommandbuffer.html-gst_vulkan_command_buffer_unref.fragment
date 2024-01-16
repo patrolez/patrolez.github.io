@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vulkanlib/vulkancommandbuffer.html#gst_vulkan_command_buffer_unref","fragment":"\n\tgst_vulkan_command_buffer_unref\n\nDecreases the refcount of the buffer. If the refcount reaches 0, the buffer\nwill be freed.\nParameters:\na GstVulkanCommandBuffer.\n\n\tSince\t\t\t: 1.18\n\t\t\n"});

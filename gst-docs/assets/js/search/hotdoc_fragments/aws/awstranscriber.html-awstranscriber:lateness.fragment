@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awstranscriber.html#awstranscriber:lateness","fragment":"\n\tlateness\n\nAmount of milliseconds to introduce as lateness\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t0\n\n"});

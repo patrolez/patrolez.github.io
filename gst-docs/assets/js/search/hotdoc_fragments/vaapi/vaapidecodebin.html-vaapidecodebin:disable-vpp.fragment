@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapidecodebin.html#vaapidecodebin:disable-vpp","fragment":"\n\tdisable-vpp\n\nDisable Video Post Processing (No support for run time disabling)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tfalse\n\n"});

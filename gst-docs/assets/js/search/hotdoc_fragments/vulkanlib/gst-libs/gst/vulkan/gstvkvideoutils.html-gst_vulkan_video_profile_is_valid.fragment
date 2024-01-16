@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vulkanlib/gst-libs/gst/vulkan/gstvkvideoutils.html#gst_vulkan_video_profile_is_valid","fragment":"\n\tgst_vulkan_video_profile_is_valid\n\nParameters:\nthe output profile\nVkVideoCodecOperationFlagBitsKHR described by profile\nTRUE if profile is correct and matches with codec\n\n\tSince\t\t\t: 1.24\n\t\t\n"});

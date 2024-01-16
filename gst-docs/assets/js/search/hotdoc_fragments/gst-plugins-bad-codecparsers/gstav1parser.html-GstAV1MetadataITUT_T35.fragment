@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstav1parser.html#GstAV1MetadataITUT_T35","fragment":"\n\tGstAV1MetadataITUT_T35\n\nFields\nshall be a byte having a value specified as a country code by\nAnnex A of Recommendation ITU-T T.35.\nshall be bytes containing data registered as specified in\nRecommendation ITU-T T.35.\n"});

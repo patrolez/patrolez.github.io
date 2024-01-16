@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"msys.bat","urls":[{"url":"installing/building-from-source-using-cerbero.html#important-windowsspecific-notes","node_type":"p","context":{"gi-language":["default"]}},{"url":"installing/building-from-source-using-cerbero.html#install-msysmingw","node_type":"p","context":{"gi-language":["default"]}}]});

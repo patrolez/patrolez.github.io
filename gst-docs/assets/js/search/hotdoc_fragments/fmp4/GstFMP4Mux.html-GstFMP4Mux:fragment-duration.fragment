@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"fmp4/GstFMP4Mux.html#GstFMP4Mux:fragment-duration","fragment":"\n\tfragment-duration\n\nDuration for each FMP4 fragment in nanoseconds\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t10000000000\n\n"});

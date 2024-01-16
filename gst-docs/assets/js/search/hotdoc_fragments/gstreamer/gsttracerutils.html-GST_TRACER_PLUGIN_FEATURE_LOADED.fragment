@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gsttracerutils.html#GST_TRACER_PLUGIN_FEATURE_LOADED","fragment":"\n\tGST_TRACER_PLUGIN_FEATURE_LOADED\n\nAdd a tracepoint when a plugin feature is loaded.\nParameters:\nThe feature that this tracer is called for\n\n\tSince\t\t\t: 1.20\n\t\t\n"});

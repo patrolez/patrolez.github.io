@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"finish_buffer","urls":[{"url":"base/gstaggregator.html#GstAggregatorClass::finish_buffer","node_type":"symbol","context":{"gi-language":["c"]}},{"url":"base/gstaggregator.html#GstAggregatorClass::finish_buffer_list","node_type":"p","context":{"gi-language":["c"]}}]});

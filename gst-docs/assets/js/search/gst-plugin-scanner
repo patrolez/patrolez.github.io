@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst-plugin-scanner","urls":[{"url":"deploying/mac-osx.html#adjusting-environment-variables-with-the-new-paths","node_type":"ul","context":{"gi-language":["default"]}},{"url":"gstreamer/gst.html#gst_get_main_executable_path","node_type":"p","context":{"gi-language":["c","javascript","python"]}}]});

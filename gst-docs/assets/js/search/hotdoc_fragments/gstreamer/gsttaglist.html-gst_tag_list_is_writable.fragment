@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gsttaglist.html#gst_tag_list_is_writable","fragment":"\n\tgst_tag_list_is_writable\n\nTests if you can safely modify taglist. It is only safe to modify taglist\nwhen there is only one owner of the taglist - ie, the refcount is 1.\nParameters:\na GstTagList\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rsaudiofx/hrtfrender.html#hrtfrender:interpolation-steps","fragment":"\n\tinterpolation-steps\n\nInterpolation Steps is the amount of slices to cut source to\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t8\n\n"});

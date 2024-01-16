@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"request_new_pad","urls":[{"url":"gstreamer/gstelement.html#GstElementClass::request_new_pad","node_type":"symbol","context":{"gi-language":["c"]}},{"url":"plugin-development/advanced/request.html#request-pads","node_type":"p","context":{"gi-language":["default"]}}]});

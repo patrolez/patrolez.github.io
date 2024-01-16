@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/index.html#use-case","fragment":"Use case\nThe webrtcbin element in GStreamer is extremely flexible and powerful, but\nusing it can be a difficult exercise. When all you want to do is serve a fixed\nset of streams to any number of consumers, webrtcsink (which wraps\nwebrtcbin internally) can be a useful alternative.\n"});

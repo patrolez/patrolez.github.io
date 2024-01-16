@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href="..">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>rswebrtc</title>
+
+<link rel="stylesheet" href="assets/css/dark-frontend.css" type="text/css" title="dark">
+<link rel="alternate stylesheet" href="assets/css/light-frontend.css" type="text/css" title="light">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/js/search/enable_search.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/extra_frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/devhelp.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/prism-tomorrow.css" type="text/css" title="dark">
+
+<link rel="alternate stylesheet" href="assets/css/prism.css" type="text/css" title="light">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<!-- generic -->
+<link rel="icon" type="image/png" href="assets/images/favicon-16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="assets/images/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/images/favicon-57.png" sizes="57x57">
+<link rel="icon" type="image/png" href="assets/images/favicon-64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="assets/images/favicon-76.png" sizes="76x76">
+<link rel="icon" type="image/png" href="assets/images/favicon-96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="assets/images/favicon-128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="assets/images/favicon-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="assets/images/favicon-228.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" sizes="196x196" href="assets/images/favicon-196.png">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="assets/images/favicon-120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="assets/images/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="assets/images/favicon-180.png" sizes="180x180">
+
+</head>
+
+<body class="no-script
+">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<span title="light mode switch" class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon"></span>
+			<form class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/gstreamer-logo.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+				
+<li class="dropdown">
+    <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        API References<span class="caret"></span>
+    </a>
+	<ul class="dropdown-menu" id="modules-menu">
+					<li>
+				<a href="gstreamer/gi-index.html">GStreamer core</a>
+			</li>
+					<li>
+				<a href="libs.html">GStreamer Libraries</a>
+			</li>
+					<li>
+				<a href="plugins_doc.html">GStreamer Plugins</a>
+			</li>
+		</ul>
+</li>
+
+<li>
+    <a href="application-development/index.html">Application manual</a>
+</li>
+
+
+<li>
+    <a href="tutorials/index.html">Tutorials</a>
+</li>
+
+			</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+							</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="gst-extension" data-hotdoc-in-toplevel="False" data-hotdoc-project="rswebrtc" data-hotdoc-ref="index.html" class="page_container" id="page-wrapper" data-hotdoc-meta-gi-languages="['c', 'javascript', 'python']">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/full-width.js"></script>
+  <div id="sitenav-wrapper">
+    <iframe src="hotdoc-sitemap.html" id="sitenav-frame"></iframe>
+  </div>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-role="main">
+        <h1 id="rswebrtc-page">rswebrtc</h1>
+<p>All-batteries included GStreamer WebRTC producer and consumer, that try their
+best to do The Right Thing™.</p>
+<p>It also provides a flexible and all-purposes WebRTC signalling server
+(<a href="signalling/src/bin/server.rs">gst-webrtc-signalling-server</a>) and a Javascript
+API (<a href="gstwebrtc-api">gstwebrtc-api</a>) to produce and consume compatible WebRTC
+streams from a web browser.</p>
+<h2 id="use-case">Use case</h2>
+<p>The <a href="https://gstreamer.freedesktop.org/documentation/webrtc/index.html">webrtcbin</a> element in GStreamer is extremely flexible and powerful, but
+using it can be a difficult exercise. When all you want to do is serve a fixed
+set of streams to any number of consumers, <code>webrtcsink</code> (which wraps
+<code>webrtcbin</code> internally) can be a useful alternative.</p>
+<h2 id="features">Features</h2>
+<p><code>webrtcsink</code> implements the following features:</p>
+<ul>
+<li>
+<p>Built-in signaller: when using the default signalling server, this element
+will perform signalling without requiring application interaction.
+This makes it usable directly from <code>gst-launch</code>.</p>
+</li>
+<li>
+<p>Application-provided signalling: <code>webrtcsink</code> can be instantiated by an
+application with a custom signaller. That signaller must be a GObject, and
+must implement the <code>Signallable</code> interface as defined
+<a href="src/signaller/mod.rs">here</a>. The <a href="src/signaller/imp.rs">default signaller</a>
+can be used as an example.</p>
+<p>An <a href="examples/webrtcsink-custom-signaller/README.md">example</a> is also available to use as a boilerplate for
+implementing and using a custom signaller.</p>
+</li>
+<li>
+<p>Sandboxed consumers: when a consumer is added, its encoder / payloader /
+webrtcbin elements run in a separately managed pipeline. This provides a
+certain level of sandboxing, as opposed to having those elements running
+inside the element itself.</p>
+<p>It is important to note that at this moment, encoding is not shared between
+consumers. While this is not on the roadmap at the moment, nothing in the
+design prevents implementing this optimization.</p>
+</li>
+<li>
+<p>Congestion control: the element leverages transport-wide congestion control
+feedback messages in order to adapt the bitrate of individual consumers' video
+encoders to the available bandwidth.</p>
+</li>
+<li>
+<p>Configuration: the level of user control over the element is slowly expanding,
+consult <code>gst-inspect-1.0</code> for more information on the available properties and
+signals.</p>
+</li>
+<li>
+<p>Packet loss mitigation: webrtcsink now supports sending protection packets for
+Forward Error Correction, modulating the amount as a function of the available
+bandwidth, and can honor retransmission requests. Both features can be
+disabled via properties.</p>
+</li>
+</ul>
+<p>It is important to note that full control over the individual elements used by
+<code>webrtcsink</code> is <em>not</em> on the roadmap, as it will act as a black box in that
+respect, for example <code>webrtcsink</code> wants to reserve control over the bitrate for
+congestion control.</p>
+<p>A signal is now available however for the application to provide the initial
+configuration for the encoders <code>webrtcsink</code> instantiates.</p>
+<p>If more granular control is required, applications should use <code>webrtcbin</code>
+directly, <code>webrtcsink</code> will focus on trying to just do the right thing, although
+it might expose more interfaces to guide and tune the heuristics it employs.</p>
+<h2 id="building">Building</h2>
+<blockquote>
+<p>Make sure to install the development packages for some codec libraries
+beforehand, such as libx264, libvpx and libopusenc, exact names depend
+on your distribution.</p>
+</blockquote>
+<pre><code class="language-shell">cargo build
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Open three terminals. In the first one, run the signalling server:</p>
+<pre><code class="language-shell">cd signalling
+WEBRTCSINK_SIGNALLING_SERVER_LOG=debug cargo run --bin gst-webrtc-signalling-server
+</code></pre>
+<p>In the second one, run a web browser client (can produce and consume streams):</p>
+<pre><code class="language-shell">cd gstwebrtc-api
+npm install
+npm start
+</code></pre>
+<p>In the third one, run a webrtcsink producer from a GStreamer pipeline:</p>
+<pre><code class="language-shell">export GST_PLUGIN_PATH=&lt;path-to-gst-plugins-rs&gt;/target/debug:$GST_PLUGIN_PATH
+gst-launch-1.0 webrtcsink name=ws meta="meta,name=gst-stream" videotestsrc ! ws. audiotestsrc ! ws.
+</code></pre>
+<p>The webrtcsink produced stream will appear in the former web page
+(automatically opened at https://localhost:9090) under the name "gst-stream",
+if you click on it you should see a test video stream and hear a test tone.</p>
+<p>You can also produce WebRTC streams from the web browser and consume them with
+a GStreamer pipeline. Click on the "Start Capture" button and copy the
+"Client ID" value.</p>
+<p>Then open a new terminal and run:</p>
+<pre><code class="language-shell">export GST_PLUGIN_PATH=&lt;path-to-gst-plugins-rs&gt;/target/debug:$GST_PLUGIN_PATH
+gst-launch-1.0 playbin uri=gstwebrtc://127.0.0.1:8443?peer-id=[Client ID]
+</code></pre>
+<p>Replacing the "peer-id" value with the previously copied "Client ID" value. You
+should see the playbin element opening a window and showing you the content
+produced by the web page.</p>
+<h2 id="configuration">Configuration</h2>
+<p>The webrtcsink element itself can be configured through its properties, see
+<code>gst-inspect-1.0 webrtcsink</code> for more information about that, in addition the
+default signaller also exposes properties for configuring it, in
+particular setting the signalling server address, those properties
+can be accessed through the <code>gst::ChildProxy</code> interface, for example
+with gst-launch:</p>
+<pre><code class="language-shell">gst-launch-1.0 webrtcsink signaller::uri="ws://127.0.0.1:8443" ..
+</code></pre>
+<h3 id="enable-navigation-aka-user-interactivity-with-the-content">Enable 'navigation' a.k.a user interactivity with the content</h3>
+<p><code>webrtcsink</code> implements the <a href="https://gstreamer.freedesktop.org/documentation/video/gstnavigation.html"><code>GstNavigation</code></a> interface which allows interacting
+with the content, for example move with your mouse, entering keys with the
+keyboard, etc... On top of that a <code>WebRTCDataChannel</code> based protocol has been
+implemented and can be activated with the <code>enable-data-channel-navigation=true</code>
+property allowing a client to send GstNavigation events using the WebRTC data channel.</p>
+<p>The <a href="gstwebrtc-api">gstwebrtc-api</a> and <code>webrtcsrc</code> implement the protocol as well
+and they can be used as a client to control a remote sever.</p>
+<p>You can easily test this feature using the <a href="https://gstreamer.freedesktop.org/documentation/wpe/wpesrc.html"><code>wpesrc</code></a> element with the following pipeline
+that will start a server that allows you to navigate the GStreamer documentation:</p>
+<pre><code class="language-shell">gst-launch-1.0 wpesrc location=https://gstreamer.freedesktop.org/documentation/ ! queue ! webrtcsink enable-data-channel-navigation=true meta="meta,name=web-stream"
+</code></pre>
+<p>You can control it inside the video running within your web browser (at
+https://127.0.0.1:9090 if you followed previous steps in that readme) or
+with the following GSteamer pipeline as a client:</p>
+<pre><code class="language-shell">gst-launch-1.0 webrtcsrc signaller::producer-peer-id=&lt;webrtcsink-peer-id&gt; enable-data-channel-navigation=true ! videoconvert ! autovideosink
+
+</code></pre>
+<h2 id="testing-congestion-control">Testing congestion control</h2>
+<p>For the purpose of testing congestion in a reproducible manner, a
+<a href="https://github.com/tylertreat/comcast">simple tool</a> has been used, it has been used on Linux exclusively but it is
+also documented as usable on MacOS too. Client web browser has to be launched
+on a separate machine on the LAN to test for congestion, although specific
+configurations may allow to run it on the same machine.</p>
+<p>Testing procedure was:</p>
+<ul>
+<li>
+<p>identify the server machine network interface (e.g. with <code>ifconfig</code> on Linux)</p>
+</li>
+<li>
+<p>identify the client machine IP address (e.g. with <code>ifconfig</code> on Linux)</p>
+</li>
+<li>
+<p>start the various services as explained in the Usage section (use
+<code>GST_DEBUG=webrtcsink:7</code> to get detailed logs about congestion control)</p>
+</li>
+<li>
+<p>start playback in the client browser</p>
+</li>
+<li>
+<p>Run a <code>comcast</code> command on the server machine, for instance:</p>
+<pre><code class="language-shell">$HOME/go/bin/comcast --device=$SERVER_INTERFACE --target-bw 3000 --target-addr=$CLIENT_IP --target-port=1:65535 --target-proto=udp
+</code></pre>
+</li>
+<li>
+<p>Observe the bitrate sharply decreasing, playback should slow down briefly
+then catch back up</p>
+</li>
+<li>
+<p>Remove the bandwidth limitation, and observe the bitrate eventually increasing
+back to a maximum:</p>
+<pre><code class="language-shell">$HOME/go/bin/comcast --device=$SERVER_INTERFACE --stop
+</code></pre>
+</li>
+</ul>
+<p>For comparison, the congestion control property can be set to "disabled" on
+webrtcsink, then the above procedure applied again, the expected result is
+for playback to simply crawl down to a halt until the bandwidth limitation
+is lifted:</p>
+<pre><code class="language-shell">gst-launch-1.0 webrtcsink congestion-control=disabled
+</code></pre>
+<h2 id="monitoring-tool">Monitoring tool</h2>
+<p>An example of client/server application for monitoring per-consumer stats
+can be found <a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/tree/main/net/webrtc/examples">here</a>.</p>
+<h2 id="license">License</h2>
+<p>All the rust code in this repository is licensed under the
+<a href="http://opensource.org/licenses/MPL-2.0">Mozilla Public License Version 2.0</a>.</p>
+<p>Code in <a href="gstwebrtc-api">gstwebrtc-api</a> is also licensed under the
+<a href="http://opensource.org/licenses/MPL-2.0">Mozilla Public License Version 2.0</a>.</p>
+<h2 id="using-the-aws-kvs-signaller">Using the AWS KVS signaller</h2>
+
+    </div>
+        
+        
+                    
+
+<div class="base_symbol_container" data-hotdoc-tags="since:plugins-rs-0.9;" id="plugin-rswebrtc">
+	
+        <i>(from gst-plugin-webrtc)</i>
+        <div class="base_symbol_container">
+        <table class="table table-striped table-hover">
+            <tbody>
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Classification</b></th>
+                    <th><b>Description</b></th>
+                </tr>
+                    <tr>
+                        <td><a title="awskvswebrtcsink" href="rswebrtc/awskvswebrtcsink.html#awskvswebrtcsink">awskvswebrtcsink</a></td>
+                        <td>Sink/Network/WebRTC</td>
+                        <td>WebRTC sink with kinesis video streams signaller</td>
+                    </tr>
+                    <tr>
+                        <td><a title="livekitwebrtcsink" href="rswebrtc/livekitwebrtcsink.html#livekitwebrtcsink">livekitwebrtcsink</a></td>
+                        <td>Sink/Network/WebRTC</td>
+                        <td>WebRTC sink with LiveKit signaller</td>
+                    </tr>
+                    <tr>
+                        <td><a title="webrtcsink" href="rswebrtc/webrtcsink.html#webrtcsink">webrtcsink</a></td>
+                        <td>Sink/Network/WebRTC</td>
+                        <td>WebRTC sink with custom protocol signaller</td>
+                    </tr>
+                    <tr>
+                        <td><a title="webrtcsrc" href="rswebrtc/webrtcsrc.html#webrtcsrc">webrtcsrc</a></td>
+                        <td>Source/Network/WebRTC</td>
+                        <td>WebRTC src</td>
+                    </tr>
+                    <tr>
+                        <td><a title="whipclientsink" href="rswebrtc/whipclientsink.html#whipclientsink">whipclientsink</a></td>
+                        <td>Sink/Network/WebRTC</td>
+                        <td>WebRTC sink with WHIP client signaller</td>
+                    </tr>
+                    <tr>
+                        <td><a title="whipserversrc" href="rswebrtc/whipserversrc.html#whipserversrc">whipserversrc</a></td>
+                        <td>Source/Network/WebRTC</td>
+                        <td>WebRTC source element using WHIP Server as the signaller</td>
+                    </tr>
+            </tbody>
+        </table>
+        </div>
+
+</div>
+
+
+
+
+
+
+		<div class="hide-if-js">
+
+<div id="subpages">
+	<p><b>Subpages:</b></p>
+	<div class="thumb-subpages">
+																																																				</div>
+							<p>
+			<a href="rswebrtc/awskvswebrtcsink.html">awskvswebrtcsink</a>
+							– WebRTC sink with kinesis video streams signaller
+						</p>
+									<p>
+			<a href="rswebrtc/GstBaseWebRTCSrc.html">GstBaseWebRTCSrc</a>
+						</p>
+									<p>
+			<a href="rswebrtc/livekitwebrtcsink.html">livekitwebrtcsink</a>
+							– WebRTC sink with LiveKit signaller
+						</p>
+									<p>
+			<a href="rswebrtc/webrtcsink.html">webrtcsink</a>
+							– WebRTC sink with custom protocol signaller
+						</p>
+									<p>
+			<a href="rswebrtc/webrtcsrc.html">webrtcsrc</a>
+							– WebRTC src
+						</p>
+									<p>
+			<a href="rswebrtc/whipclientsink.html">whipclientsink</a>
+							– WebRTC sink with WHIP client signaller
+						</p>
+									<p>
+			<a href="rswebrtc/whipserversrc.html">whipserversrc</a>
+							– WebRTC source element using WHIP Server as the signaller
+						</p>
+			</div>
+
+</div>
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
+</html>

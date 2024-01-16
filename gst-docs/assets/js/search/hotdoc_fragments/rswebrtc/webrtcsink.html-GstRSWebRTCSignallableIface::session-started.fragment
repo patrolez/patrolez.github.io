@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/webrtcsink.html#GstRSWebRTCSignallableIface::session-started","fragment":"\n\tsession-started\n\nNotify the underlying webrtc object that a session has started.\nParameters:\nThe object implementing GstRSWebRTCSignallableIface\n\n\tFlags:\t\n\t\n\t\t\n\t\t\t\tRun Last\n\t\t\t\n\n"});

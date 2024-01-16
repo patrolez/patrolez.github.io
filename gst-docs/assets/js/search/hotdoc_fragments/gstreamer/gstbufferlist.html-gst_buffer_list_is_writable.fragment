@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstbufferlist.html#gst_buffer_list_is_writable","fragment":"\n\tgst_buffer_list_is_writable\n\nTests if you can safely add buffers and groups into a buffer list.\nParameters:\na GstBufferList\n"});

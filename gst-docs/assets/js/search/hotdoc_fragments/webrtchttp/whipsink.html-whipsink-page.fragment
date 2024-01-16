@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"webrtchttp/whipsink.html#whipsink-page","fragment":"whipsink\nwhipsink is an element that acts a WHIP Client to ingest RTP content to a media server\nNote: whipsink will be deprecated in the future. It is replaced by whipclientsink,\nwhich provides more features such as managing encoding and performing bandwidth adaptation\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gsth264parser.html#GstH264DecoderConfigRecord","fragment":"\n\tGstH264DecoderConfigRecord\n\nFields\nContains AVCDecoderConfigurationRecord data as defined in ISO/IEC 14496-15\n\n\tSince\t\t\t: 1.22\n\t\t\n"});

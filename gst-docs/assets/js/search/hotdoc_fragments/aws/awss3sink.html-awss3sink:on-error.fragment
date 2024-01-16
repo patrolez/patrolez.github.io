@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awss3sink.html#awss3sink:on-error","fragment":"\n\ton-error\n\nDo nothing, abort or complete a multipart upload request on error\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tnothing (2)\n\n"});

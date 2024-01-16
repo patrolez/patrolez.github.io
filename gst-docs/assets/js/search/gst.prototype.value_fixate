@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst.prototype.value_fixate","urls":[{"url":"gstreamer/gststructure.html#gst_structure_fixate","node_type":"p","context":{"gi-language":["javascript"]}},{"url":"gstreamer/gstvalue.html#gst_value_fixate","node_type":"symbol","context":{"gi-language":["javascript"]}}]});

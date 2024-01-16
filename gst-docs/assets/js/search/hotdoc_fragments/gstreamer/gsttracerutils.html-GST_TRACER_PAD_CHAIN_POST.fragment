@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gsttracerutils.html#GST_TRACER_PAD_CHAIN_POST","fragment":"\n\tGST_TRACER_PAD_CHAIN_POST\n\nDispatches the \"pad-chain-post\" hook.\nParameters:\na GstPad\na GstFlowReturn\n\n\tSince\t\t\t: 1.22\n\t\t\n"});

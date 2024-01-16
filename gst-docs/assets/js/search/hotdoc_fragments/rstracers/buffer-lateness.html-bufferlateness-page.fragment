@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rstracers/buffer-lateness.html#bufferlateness-page","fragment":"buffer-lateness\nThis tracer provides an easy way to collect lateness of each buffer when it is pushed out of a\npad in live pipelines.\nExample:\nThe generated file is a CSV file of the format\n"});

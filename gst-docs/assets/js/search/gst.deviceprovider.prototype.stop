@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst.deviceprovider.prototype.stop","urls":[{"url":"gstreamer/gstdeviceprovider.html#gst_device_provider_start","node_type":"p","context":{"gi-language":["javascript"]}},{"url":"gstreamer/gstdeviceprovider.html#gst_device_provider_stop","node_type":"symbol","context":{"gi-language":["javascript"]}}]});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"fallbackswitch/fallbackswitch.html#fallbackswitch:auto-switch","fragment":"\n\tauto-switch\n\nAutomatically switch pads (If true, use the priority pad property, otherwise manual selection via the active-pad property)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\ttrue\n\n"});

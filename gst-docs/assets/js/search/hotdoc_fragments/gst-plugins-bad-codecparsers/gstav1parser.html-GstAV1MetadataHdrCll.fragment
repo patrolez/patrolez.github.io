@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstav1parser.html#GstAV1MetadataHdrCll","fragment":"\n\tGstAV1MetadataHdrCll\n\nFields\nHigh Dynamic Range content light level syntax metadata.\nspecifies the maximum content light level as specified in CEA-861.3, Appendix A.\nspecifies the maximum frame-average light level as specified in CEA-861.3, Appendix A.\n"});

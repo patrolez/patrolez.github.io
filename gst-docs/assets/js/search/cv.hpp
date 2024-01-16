@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"cv.hpp","urls":[{"url":"opencv/grabcut.html#grabcut-page","node_type":"p","context":{"gi-language":["default"]}}]});

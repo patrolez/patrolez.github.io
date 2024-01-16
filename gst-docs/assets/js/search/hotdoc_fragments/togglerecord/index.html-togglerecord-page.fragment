@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"togglerecord/index.html#togglerecord-page","fragment":"togglerecord\nA multistream valve-like plugin that ensures multiple streams start/end at the\nsame time.\nIt supports both live and non-live input and toggles recording via the\nrecord property. Live inputs will be dropped when not recording, while\nnon-live inputs will be blocked.\n"});

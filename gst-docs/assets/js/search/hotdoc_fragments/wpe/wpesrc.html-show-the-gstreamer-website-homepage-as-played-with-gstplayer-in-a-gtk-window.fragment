@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"wpe/wpesrc.html#show-the-gstreamer-website-homepage-as-played-with-gstplayer-in-a-gtk-window","fragment":"Show the GStreamer website homepage as played with GstPlayer in a GTK+ window\nUntil 1.20 the web:// URI protocol was supported, along with wpe://.\nThe supported URI protocols are web+http://, web+https:// and web+file://.\n"});

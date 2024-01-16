@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"hlssink3/GstHlsBaseSink.html#GstHlsBaseSink:enable-program-date-time","fragment":"\n\tenable-program-date-time\n\nput EXT-X-PROGRAM-DATE-TIME tag in the playlist\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tfalse\n\n"});

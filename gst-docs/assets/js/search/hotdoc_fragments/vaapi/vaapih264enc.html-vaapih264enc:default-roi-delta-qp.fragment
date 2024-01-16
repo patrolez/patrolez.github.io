@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapih264enc.html#vaapih264enc:default-roi-delta-qp","fragment":"\n\tdefault-roi-delta-qp\n\nThe default delta-qp to apply to each Region of Interest(lower value means higher-quality, higher value means lower-quality)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t-10\n\n"});

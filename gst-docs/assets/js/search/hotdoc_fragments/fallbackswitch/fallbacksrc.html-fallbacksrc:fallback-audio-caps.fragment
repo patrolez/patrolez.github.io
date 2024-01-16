@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"fallbackswitch/fallbacksrc.html#fallbacksrc:fallback-audio-caps","fragment":"\n\tfallback-audio-caps\n\nRaw audio caps for fallback stream\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t\n"});

@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gstvideoafdvalue","urls":[{"url":"video/gstvideoanc.html#GstVideoAFDMeta","node_type":"p","context":{"gi-language":["c"]}},{"url":"video/gstvideoanc.html#GstVideoAFDValue","node_type":"symbol","context":{"gi-language":["c"]}},{"url":"video/gstvideoanc.html#gst_buffer_add_video_afd_meta","node_type":"p","context":{"gi-language":["c"]}}]});

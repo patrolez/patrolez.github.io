@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst_base_sink_set_render_delay","urls":[{"url":"base/gstbasesink.html#gst_base_sink_get_render_delay","node_type":"p","context":{"gi-language":["c"]}},{"url":"base/gstbasesink.html#gst_base_sink_set_render_delay","node_type":"symbol","context":{"gi-language":["c"]}}]});

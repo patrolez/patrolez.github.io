@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awstranscriber.html#awstranscriber:session-id","fragment":"\n\tsession-id\n\nThe ID of the transcription session, must be length 36\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tNULL\n\n"});

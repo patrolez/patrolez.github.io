@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstav1parser.html#GstAV1Parser","fragment":"\n\tGstAV1Parser\n\nGstAV1Parser opaque structure\nInstantiante it with gst_av1_parser_new and destroy it with\ngst_av1_parser_free\n"});

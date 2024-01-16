@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awss3src.html#awss3src:request-timeout","fragment":"\n\trequest-timeout\n\nTimeout for each S3 request (in ms, set to -1 for infinity)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t15000\n\n"});

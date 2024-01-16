@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"opencv.itseez.com","urls":[{"url":"opencv/segmentation.html#segmentation-page","node_type":"p","context":{"gi-language":["default"]}}]});

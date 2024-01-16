@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"uriplaylistbin/index.html#uriplaylistbin:iterations","fragment":"\n\titerations\n\nNumber of time the playlist items should be played each (0 = unlimited)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t1\n\n"});

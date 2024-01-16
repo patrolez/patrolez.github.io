@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstvc1parser.html#gst_vc1_identify_next_bdu","fragment":"\n\tgst_vc1_identify_next_bdu\n\nParses data and fills bdu fields\nParameters:\nThe data to parse\nthe size of data\nThe GstVC1BDU where to store parsed bdu headers\na GstVC1ParserResult\n"});

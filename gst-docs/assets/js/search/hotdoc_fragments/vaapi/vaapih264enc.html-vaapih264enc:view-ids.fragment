@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapih264enc.html#vaapih264enc:view-ids","fragment":"\n\tview-ids\n\nSet of View Ids used for MVC encoding\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n"});

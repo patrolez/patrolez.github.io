@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst.memory.prototype.is_type","urls":[{"url":"allocators/gstshmallocator.html#GST_ALLOCATOR_SHM","node_type":"p","context":{"gi-language":["javascript"]}},{"url":"gstreamer/gstmemory.html#gst_memory_is_type","node_type":"symbol","context":{"gi-language":["javascript"]}}]});

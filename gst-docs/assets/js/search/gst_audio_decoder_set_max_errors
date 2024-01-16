@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst_audio_decoder_set_max_errors","urls":[{"url":"audio/gstaudiodecoder.html#GstAudioDecoder:max-errors","node_type":"p","context":{"gi-language":["c"]}},{"url":"audio/gstaudiodecoder.html#gst_audio_decoder_set_max_errors","node_type":"symbol","context":{"gi-language":["c"]}}]});

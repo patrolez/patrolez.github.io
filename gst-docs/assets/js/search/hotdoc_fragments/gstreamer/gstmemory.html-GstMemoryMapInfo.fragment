@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstmemory.html#GstMemoryMapInfo","fragment":"\n\tGstMemoryMapInfo\n\nAlias for GstMapInfo to be used with g_auto:\nGstMapInfo cannot be used with g_auto because it is ambiguous whether it\nneeds to be unmapped using gst_buffer_unmap or gst_memory_unmap.\nSee also GstBufferMapInfo.\n\n\tSince\t\t\t: 1.22\n\t\t\n"});

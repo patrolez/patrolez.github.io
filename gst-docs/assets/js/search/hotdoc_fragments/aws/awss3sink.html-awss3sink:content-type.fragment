@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"aws/awss3sink.html#awss3sink:content-type","fragment":"\n\tcontent-type\n\nContent-Type header to set for uploaded object\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tNULL\n\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstquery.html#gst_query_is_writable","fragment":"\n\tgst_query_is_writable\n\nTests if you can safely write data into a query's structure.\nParameters:\na GstQuery\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"installing/building-from-source-using-cerbero.html#nvidia-hardware-codecs","fragment":"Nvidia Hardware Codecs\nSince 1.17.1, the nvcodec plugin does not need access to the Nvidia Video SDK\nor the CUDA SDK. It now loads everything at runtime. Hence, it is now enabled\nby default on all platforms.\n"});

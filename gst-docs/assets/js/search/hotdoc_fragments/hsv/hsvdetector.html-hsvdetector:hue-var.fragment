@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"hsv/hsvdetector.html#hsvdetector:hue-var","fragment":"\n\thue-var\n\nAllowed hue variation from the reference hue angle, in degrees\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t10\n\n"});

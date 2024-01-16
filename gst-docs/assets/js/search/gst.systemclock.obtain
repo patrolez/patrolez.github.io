@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst.systemclock.obtain","urls":[{"url":"gstreamer/gstsystemclock.html#gst_system_clock_obtain","node_type":"symbol","context":{"gi-language":["python"]}},{"url":"gstreamer/gstsystemclock.html#gst_system_clock_set_default","node_type":"p","context":{"gi-language":["python"]}}]});

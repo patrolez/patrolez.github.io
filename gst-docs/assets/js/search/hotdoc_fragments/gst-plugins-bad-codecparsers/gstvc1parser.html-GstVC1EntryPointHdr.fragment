@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstvc1parser.html#GstVC1EntryPointHdr","fragment":"\n\tGstVC1EntryPointHdr\n\nFields\nStructure for entrypoint header, this will be used only in advanced profiles\n"});

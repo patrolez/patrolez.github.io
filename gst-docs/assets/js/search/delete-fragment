@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"delete-fragment","urls":[{"url":"hls/hlssink2.html#hlssink2::delete-fragment","node_type":"symbol","context":{"gi-language":["default"]}},{"url":"hlssink3/GstHlsBaseSink.html#GstHlsBaseSink::delete-fragment","node_type":"symbol","context":{"gi-language":["default"]}}]});

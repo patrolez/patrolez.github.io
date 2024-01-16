@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"wasapi2/wasapi2sink.html#wasapi2sink:device","fragment":"\n\tdevice\n\nAudio device ID as provided by Windows.Devices.Enumeration.DeviceInformation.Id\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\tNULL\n\n"});

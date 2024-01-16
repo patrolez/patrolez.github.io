@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"wpe/wpesrc.html#GstWpeSrc!audio_%u","fragment":"audio_%u\nEach audio stream in the renderer web page will expose the and audio_%u\nGstPad.\nPresence – sometimes\nDirection – src\nObject type – GstPad\n\n\tSince\t\t\t: 1.20\n\t\t\n"});

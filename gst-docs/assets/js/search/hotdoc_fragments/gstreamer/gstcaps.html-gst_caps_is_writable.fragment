@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstcaps.html#gst_caps_is_writable","fragment":"\n\tgst_caps_is_writable\n\nTests if you can safely modify caps. It is only safe to modify caps when\nthere is only one owner of the caps - ie, the object is writable.\nParameters:\na GstCaps\n"});

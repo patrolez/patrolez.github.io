@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstcontext.html#gst_context_make_writable","fragment":"\n\tgst_context_make_writable\n\nChecks if a context is writable. If not, a writable copy is made and\nreturned.\nParameters:\nthe context to make writable\na context (possibly a duplicate) that is writable.\nMT safe\n"});

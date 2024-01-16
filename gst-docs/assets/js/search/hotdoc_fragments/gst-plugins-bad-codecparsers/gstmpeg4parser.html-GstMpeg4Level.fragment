@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstmpeg4parser.html#GstMpeg4Level","fragment":"\n\tGstMpeg4Level\n\nMembers\nDifferent levels as defined in:\n9- Profiles and levels\nIt is computed using:\nTable G.1 — FLC table for profile_and_level_indication\n"});

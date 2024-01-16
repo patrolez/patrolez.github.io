@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"media-info-updated","urls":[{"url":"play/gst-libs/gst/play/gstplay-types.html#GstPlaySignalAdapter::media-info-updated","node_type":"symbol","context":{"gi-language":["c","javascript","python"]}},{"url":"player/gstplayer.html#GstPlayer::media-info-updated","node_type":"symbol","context":{"gi-language":["c","javascript","python"]}}]});

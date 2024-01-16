@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/webrtcsink.html#GstBaseWebRTCSink:min-bitrate","fragment":"\n\tmin-bitrate\n\nMinimal bitrate to use (in bit/sec) when computing it through the congestion control algorithm\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t1000\n\n"});

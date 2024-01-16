@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gsth265parser.html#gst_h265_parser_update_vps","fragment":"\n\tgst_h265_parser_update_vps\n\nReplace internal Video Parameter Set struct corresponding to id of vps\nwith vps. nalparser will mark vps as last parsed vps.\nParameters:\na GstH265Parser\na GstH265VPS.\na GstH265ParserResult\n\n\tSince\t\t\t: 1.18\n\t\t\n"});

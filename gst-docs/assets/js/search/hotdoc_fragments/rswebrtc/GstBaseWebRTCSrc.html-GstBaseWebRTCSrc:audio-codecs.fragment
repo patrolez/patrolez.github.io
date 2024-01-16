@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/GstBaseWebRTCSrc.html#GstBaseWebRTCSrc:audio-codecs","fragment":"\n\taudio-codecs\n\nNames of audio codecs to be be used during the SDP negotiation. Valid values: [OPUS]\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n"});

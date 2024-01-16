@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/webrtcsink.html#GstRSWebRTCSignallableIface::request-meta","fragment":"\n\trequest-meta\n\nThe signaller requests a meta about the peer using it\nReturn: The metadata about the peer represented by the signaller\nParameters:\nThe object implementing GstRSWebRTCSignallableIface\n\n\tFlags:\t\n\t\n\t\t\n\t\t\t\tRun Last\n\t\t\t\n\n"});

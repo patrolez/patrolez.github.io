@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/webrtcsink.html#GstRSWebRTCSignallableIface","fragment":"\n\tGstRSWebRTCSignallableIface\n\nInterface that WebRTC elements can implement their own protocol with.\n"});

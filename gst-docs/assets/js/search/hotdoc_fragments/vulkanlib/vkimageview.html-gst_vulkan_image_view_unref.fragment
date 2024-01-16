@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vulkanlib/vkimageview.html#gst_vulkan_image_view_unref","fragment":"\n\tgst_vulkan_image_view_unref\n\nDecreases the refcount of the trash object. If the refcount reaches 0, the\ntrash will be freed.\nParameters:\na GstVulkanImageView.\n\n\tSince\t\t\t: 1.18\n\t\t\n"});

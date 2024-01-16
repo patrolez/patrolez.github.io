@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstjpegparser.html#GstJpegQuantTables","fragment":"\n\tGstJpegQuantTables\n\nFields\nHelper data structure that holds all quantization tables used to\ndecode an image.\nAll quantization tables\n\n\tSince\t\t\t: 1.6\n\t\t\n"});

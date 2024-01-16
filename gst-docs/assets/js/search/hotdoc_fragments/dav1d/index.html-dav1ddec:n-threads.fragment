@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"dav1d/index.html#dav1ddec:n-threads","fragment":"\n\tn-threads\n\nNumber of threads to use while decoding (set to 0 to use number of logical cores)\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t0\n\n"});

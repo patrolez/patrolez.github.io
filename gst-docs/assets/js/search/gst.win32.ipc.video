@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gst.win32.ipc.video","urls":[{"url":"win32ipc/win32ipcvideosink.html#win32ipcvideosink:pipe-name","node_type":"p","context":{"gi-language":["default"]}},{"url":"win32ipc/win32ipcvideosrc.html#win32ipcvideosrc:pipe-name","node_type":"p","context":{"gi-language":["default"]}}]});

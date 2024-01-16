@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"vaapi/vaapipostproc.html#vaapipostproc:saturation","fragment":"\n\tsaturation\n\nThe color saturation, expressed as a float value. Range is 0.0 to\n2.0. Default value is 1.0 and represents no modification.\n\n\tFlags :\t\n\t\n\t\t\n\t\t\t\tRead\n\t\t\t\n\t\t\t\t/\t\t\n\t\t\t\tWrite\n\t\t\t\n\n\n\tDefault value :\t1\n\n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gst-plugins-bad-codecparsers/gstjpegparser.html#GstJpegFrameHdr","fragment":"\n\tGstJpegFrameHdr\n\nFields\nFrame header.\nSample precision (P)\nNumber of samples per line (X)\nNumber of lines (Y)\nNumber of image components in frame (Nf)\nImage components\n\n\tSince\t\t\t: 1.6\n\t\t\n"});

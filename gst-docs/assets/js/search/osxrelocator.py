@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"osxrelocator.py","urls":[{"url":"deploying/mac-osx.html#relocation-of-the-binaries","node_type":"p","context":{"gi-language":["default"]}}]});

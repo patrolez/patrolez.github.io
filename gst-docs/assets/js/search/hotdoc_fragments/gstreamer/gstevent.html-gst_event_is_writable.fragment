@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"gstreamer/gstevent.html#gst_event_is_writable","fragment":"\n\tgst_event_is_writable\n\nTests if you can safely write data into a event's structure or validly\nmodify the seqnum and timestamp field.\nParameters:\na GstEvent\n"});

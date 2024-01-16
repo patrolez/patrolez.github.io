@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"rswebrtc/webrtcsink.html#GstBaseWebRTCSink","fragment":"\n\tGstBaseWebRTCSink\n\nBase class for WebRTC sinks to implement and provide their own protocol for.\n"});

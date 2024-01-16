@@ -1,0 +1,1 @@
+urls_downloaded_cb({"token":"gstplugininitfullfunc","urls":[{"url":"gstreamer/gstplugin.html#GstPluginInitFullFunc","node_type":"symbol","context":{"gi-language":["c"]}},{"url":"gstreamer/gstplugin.html#gst_plugin_register_static_full","node_type":"p","context":{"gi-language":["c"]}}]});
